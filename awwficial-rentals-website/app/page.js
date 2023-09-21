@@ -1,4 +1,5 @@
 import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
         Contained
       </Button>
       <Button variant="outlined">Outlined</Button>
+      <Typography variant="p">Awwficial Rentals</Typography>
     </div>
   );
 }
