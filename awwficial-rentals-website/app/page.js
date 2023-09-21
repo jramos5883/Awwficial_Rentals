@@ -1,17 +1,17 @@
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
+import VideoBanner from "./components/videoBanner";
+import ProductDescription from "./components/productDescription";
+import Gallery from "./components/gallery";
+import ClientsReviewsTests from "./components/clientsReviewsTests";
+import Footer from "./components/footer";
 
 export default function Home() {
   return (
-    <div className="h-20 bg-blue-300 cellsm:bg-blue-600 celllg:bg-blue-900 tablet:bg-yellow-300 lapsm:bg-green-300 laplg:bg-green-600 desksm:bg-red-600 desklg:bg-red-900">
-      <Button variant="text" className="">
-        Text
-      </Button>
-      <Button variant="contained" className="">
-        Contained
-      </Button>
-      <Button variant="outlined">Outlined</Button>
-      <Typography variant="p">Awwficial Rentals</Typography>
+    <div className="">
+      <VideoBanner />
+      <ProductDescription />
+      <Gallery />
+      <ClientsReviewsTests />
+      <Footer />
     </div>
   );
 }
