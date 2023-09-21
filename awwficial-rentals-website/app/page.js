@@ -6,7 +6,7 @@ export default function Home() {
       <Button variant="text" className="">
         Text
       </Button>
-      <Button variant="contained" className="px-12">
+      <Button variant="contained" className="">
         Contained
       </Button>
       <Button variant="outlined">Outlined</Button>
