@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography";
 
 export default function VideoBanner() {
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center bg-yellow-100">
       {/* The following divs are hidden on mobile and shown on tablet and up */}
       <div className="hidden tablet:block tablet:max-w-xs lapsm:max-w-lg desksm:max-w-2xl">
         <div className="relative flex items-center justify-center">
