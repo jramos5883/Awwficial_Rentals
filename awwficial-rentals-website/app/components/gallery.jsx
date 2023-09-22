@@ -2,33 +2,35 @@ import DropboxVideoEmbed from "./video.comp";
 
 export default function Gallery() {
   return (
-    <div className="bg-yellow-50">
-      <div className="grid grid-cols-12 gap-4">
-        <div className="col-span-1" />
-        <div className="col-span-3">
-          <DropboxVideoEmbed videoLink="https://www.dropbox.com/scl/fi/epradd978l20pvktd6xrc/AwwficialCC_2.mov?rlkey=j1i1gkd3ejd3x00bjjx4xk9eg&dl=0" />
+    <main className="bg-yellow-100">
+      <section>
+        <div className="grid grid-cols-11">
+          <div className="col-span-3">
+            <DropboxVideoEmbed videoLink="https://www.dropbox.com/scl/fi/rygy30vxfb0ynqhop7h12/AwwficialCC_3.mov?rlkey=i7sv9dy309zmjqo8r0kcutil3&dl=0" />
+          </div>
+          <div className="col-span-1" />
+          <div className="col-span-3 ">
+            <DropboxVideoEmbed videoLink="https://www.dropbox.com/scl/fi/epradd978l20pvktd6xrc/AwwficialCC_2.mov?rlkey=j1i1gkd3ejd3x00bjjx4xk9eg&dl=0" />
+          </div>
+          <div className="col-span-1" />
+          <div className="col-span-3 ">
+            <DropboxVideoEmbed videoLink="https://www.dropbox.com/scl/fi/1yskpzjq3hoz1xm0sjwqf/AwwficialCC_1.mov?rlkey=41p27bt9gk2barr4b7h6z3g4d&dl=0" />
+          </div>
         </div>
-        <div className="col-span-1" />
-        <div className="col-span-3">
-          <DropboxVideoEmbed videoLink="https://www.dropbox.com/scl/fi/epradd978l20pvktd6xrc/AwwficialCC_2.mov?rlkey=j1i1gkd3ejd3x00bjjx4xk9eg&dl=0" />
+      </section>
+      <section>
+        <div className="grid grid-cols-11">
+          <div className="col-span-2" />
+          <div className=" col-span-3">
+            <DropboxVideoEmbed videoLink="https://www.dropbox.com/scl/fi/epradd978l20pvktd6xrc/AwwficialCC_2.mov?rlkey=j1i1gkd3ejd3x00bjjx4xk9eg&dl=0" />
+          </div>
+          <div className="col-span-1" />
+          <div className=" col-span-3">
+            <DropboxVideoEmbed videoLink="https://www.dropbox.com/scl/fi/rygy30vxfb0ynqhop7h12/AwwficialCC_3.mov?rlkey=i7sv9dy309zmjqo8r0kcutil3&dl=0" />
+          </div>
+          <div className="col-span-2" />
         </div>
-        <div className="col-span-1" />
-        <div className="col-span-3">
-          <DropboxVideoEmbed videoLink="https://www.dropbox.com/scl/fi/epradd978l20pvktd6xrc/AwwficialCC_2.mov?rlkey=j1i1gkd3ejd3x00bjjx4xk9eg&dl=0" />
-        </div>
-      </div>
-
-      <div className="grid grid-cols-12 gap-4">
-        <div className="col-span-3" />
-        <div className="col-span-3">
-          <DropboxVideoEmbed videoLink="https://www.dropbox.com/scl/fi/epradd978l20pvktd6xrc/AwwficialCC_2.mov?rlkey=j1i1gkd3ejd3x00bjjx4xk9eg&dl=0" />
-        </div>
-        <div className="" />
-        <div className="col-span-3">
-          <DropboxVideoEmbed videoLink="https://www.dropbox.com/scl/fi/epradd978l20pvktd6xrc/AwwficialCC_2.mov?rlkey=j1i1gkd3ejd3x00bjjx4xk9eg&dl=0" />
-        </div>
-        <div className="col-span-3" />
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }

@@ -16,7 +16,7 @@ export default function Footer() {
         <a href="/BookNow">
           <Button className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-bold py-2 px-5">
             {" "}
-            Book now !
+            Book Today !
           </Button>
         </a>
       </section>

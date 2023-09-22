@@ -27,9 +27,9 @@ export default function VideoBanner() {
                 href="/BookNow"
                 variant="contained"
                 color="primary"
-                className="text-white"
+                className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-bold py-2 px-5"
               >
-                Book Now!
+                Book Now !
               </Button>
             </div>
           </div>
