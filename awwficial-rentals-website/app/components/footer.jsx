@@ -1,10 +1,7 @@
 import Link from "next/link";
 import Button from "@mui/material/Button";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import { FaTiktok } from "react-icons/fa6";
 
-// Assigned to Tomomi :)
 export default function Footer() {
   return (
     <footer className="text-center">
@@ -42,20 +39,14 @@ export default function Footer() {
           </ul>
         </nav>
         <div className="w-5/12 max-w-xs mx-auto">
-          <ul className="list-none px-7 flex justify-around items-center">
+          <ul className="list-none mt-0 px-7 flex justify-around items-center">
             <li>
-              <FacebookIcon className="p-1 text-3xl text-white hover:text-pink-500" />
-            </li>
-            <li>
-              <InstagramIcon className="p-1 text-3xl text-white hover:text-pink-500" />
-            </li>
-            <li>
-              <FaTiktok className="p-1 text-2xl  text-white hover:text-pink-500"></FaTiktok>
+              <a href="https://www.instagram.com/awwficialrentals/" className="text-white hover:text-pink-500"  ><InstagramIcon className="p-1 text-3xl text-white hover:text-pink-500" /></a>
             </li>
           </ul>
         </div>
         <p className="leading-normal  text-white">
-          © Copyright 2023 Awwficial Rentals.{" "}
+          © Copyright 2023 Awwficial Rentals.
           <span className="block">All rights reserved.</span>
         </p>
       </section>
