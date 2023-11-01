@@ -1,8 +1,7 @@
 import VideoBanner from "./components/videoBanner";
 import ProductDescription from "./components/productDescription";
-import Gallery from "./components/gallery";
+import Gallery from "./components/homepage_gallery";
 import ClientsReviewsTests from "./components/clientsReviewsTests";
-import Footer from "./components/footer";
 
 export default function Home() {
   return (
@@ -11,7 +10,6 @@ export default function Home() {
       <ProductDescription />
       <Gallery />
       <ClientsReviewsTests />
-      <Footer />
     </div>
   );
 }
