@@ -23,24 +23,24 @@ function ResponsiveDrawer({navBarLabels}) {
 
 
   const drawer = (
-    <div>
-      <Toolbar />
-      <Divider />
-      <List>
-        {navBarLabels.map((text, index) => (
-          <ListItem key={index} disablePadding>
-            <ListItemButton>
-              <ListItemText>{text}</ListItemText>
-            </ListItemButton>
-          </ListItem>
+
+      <List onClick ={handleDrawerToggle}>
+        {navBarLabels.map(page => (
+          <Link href={page.route} key={page.label}>
+            <ListItem>
+              <ListItemButton>
+                <ListItemText primary={page.label}/>
+              </ListItemButton>
+            </ListItem>
+          </Link>
         ))}
       </List>
-    </div>
+
   );
 
 
   return (
-    <div className="space-x-2">
+    <div>
         <IconButton
           onClick={handleDrawerToggle}
         >
@@ -50,9 +50,11 @@ function ResponsiveDrawer({navBarLabels}) {
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
-          anchor="right"
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+          anchor='right'
+          sx={{
+            '.MuiDrawer-paper': {
+              width: "50vw",
+            },
           }}
         >
           {drawer}
