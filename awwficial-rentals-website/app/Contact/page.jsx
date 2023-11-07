@@ -11,7 +11,7 @@ export default function Contact() {
       <div className="max-w-screen-xl grid grid-cols-1 tablet:grid-cols-2 mx-auto py-10">
         <section className="mx-auto px-5 pb-5 box-border w-full tablet:pb-0">
         <h1 className="text-3xl mt-0 text-center tablet:text-left bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-600 inline-block text-transparent bg-clip-text">Contact Us Today!</h1>
-          <div>
+          <div className="text-yellow-900">
             <p className="mb-10">
               <span className="block">Comments or questions about our service?</span>
               Please fill out the form and we&apos;ll get back to you as soon as possible!
@@ -37,8 +37,6 @@ export default function Contact() {
           <input type="text" name="_honey" className="hidden" />
           {/* Disable Captcha */}
           <input type="hidden" name="_captcha" value="false" />
-
-          <input type="hidden" name="_next" value="http://localhost:3000/Contact/success.html" />
         
           <div className="grid grid-cols-1 lapsm:grid-cols-2 gap-3">
             <div>
@@ -58,7 +56,7 @@ export default function Contact() {
             <label className="sr-only" htmlFor="message">Message</label>
             <textarea className="grow text-lg bg-inherit px-2 w-full  border-yellow-500 placeholder:font-sans" id="message" type="text" name="message" placeholder="Message" required />
           </div>
-          <button className="py-2 border-0 bg-gradient-to-r rounded from-yellow-500 via-yellow-600 to-yellow-700 text-white font-bold py-2 px-5" type="submit">SEND</button>
+          <button className="py-2 px-5 border-0 bg-gradient-to-r rounded from-yellow-500 via-yellow-600 to-yellow-700 text-white font-bold hover:shadow-lg" type="submit">SEND</button>
         </form>
       </div>
     </main>
