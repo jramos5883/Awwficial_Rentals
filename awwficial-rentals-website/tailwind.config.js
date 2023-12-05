@@ -10,6 +10,12 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    colors: {
+      primary: "white",
+      secondary: "white",
+      accent: "white",
+    },
+
     extend: {
       screens: {
         // Custom Break Points
