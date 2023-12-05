@@ -37,7 +37,7 @@ export default function ProductDescription() {
           </article>
           <article className="text-center px-3">
             <MdWifiTethering className="text-2xl" />
-            <h5 className>Instantly Sharable</h5>
+            <h5>Instantly Sharable</h5>
           </article>
           <article className="text-center px-3">
             <FavoriteBorderIcon />
