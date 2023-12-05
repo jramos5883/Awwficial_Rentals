@@ -1,9 +1,22 @@
+"use client";
 import { FaPhone } from "react-icons/fa6"
 import { FiMail } from "react-icons/fi"
+import sendEmail from "../util/sendEmail";
 
 export default function Contact() {
 
   // check errors
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const req = await sendEmail("tomomi@gmail.com", "hello", "HI");
+      if (req.status === 250) {
+        console.log("successfully sent email")
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   // name, email, phone number and text area
   return (
@@ -32,7 +45,7 @@ export default function Contact() {
               </div>
           </div>
         </section>
-        <form className="flex flex-col px-5 gap-2" action="https://formsubmit.co/728e4757f50eb5784d2d959cd5dcd793" method="POST">
+        <form className="flex flex-col px-5 gap-2" action="https://formsubmit.co/728e4757f50eb5784d2d959cd5dcd793" method="POST" onSubmit={handleSubmit}>
           {/* honeypot */}
           <input type="text" name="_honey" className="hidden" />
           {/* Disable Captcha */}
