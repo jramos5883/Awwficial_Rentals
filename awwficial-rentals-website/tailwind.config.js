@@ -1,20 +1,19 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  important: "#root",
-  corePlugins: {
-    preflight: false,
-  },
+  // important: "#root",
+  // corePlugins: {
+  //   preflight: false,
+  // },
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    colors: {
-      primary: "white",
-      secondary: "white",
-      accent: "white",
-    },
+    // colors: {
+    //   primary: "#7E1F86",
+    //   secondary: "white",
+    //   accent: "white",
 
     extend: {
       screens: {
@@ -24,6 +23,7 @@ module.exports = {
         tablet: "768px",
         lapsm: "1024px",
         laplg: "1366px",
+        lapxl: "1536px",
         desksm: "1920px",
         desklg: "2560px",
       },

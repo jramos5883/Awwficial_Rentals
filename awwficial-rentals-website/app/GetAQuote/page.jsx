@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import Head from "next/head";
 
-export default function BookNow() {
+export default function GetAQuote() {
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://assets.calendly.com/assets/external/widget.js";
