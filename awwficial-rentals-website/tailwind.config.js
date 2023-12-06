@@ -11,10 +11,10 @@ module.exports = {
   ],
   theme: {
     // colors: {
-    //   primary: "#7E1F86",
-    //   secondary: "white",
-    //   accent: "white",
-
+    // primary: "#7E1F86",
+    // secondary: "white",
+    // accent: "white",
+    // },
     extend: {
       screens: {
         // Custom Break Points
