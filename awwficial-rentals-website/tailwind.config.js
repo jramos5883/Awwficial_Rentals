@@ -10,11 +10,15 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    // colors: {
-    //   primary: "#7E1F86",
-    //   secondary: "white",
-    //   accent: "white",
-
+    colors: {
+      primary: {
+        DEFAULT: "#7E1F86",
+        hover: "#A562AA"
+      },
+      secondary: "#FFFBDB",
+      accent: "#D492E7",
+      mainbg:"#FFFCF8",
+    },
     extend: {
       screens: {
         // Custom Break Points
