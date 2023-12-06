@@ -1,8 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
+import { addContactToDB } from "../actions";
 
 function ContactForm() {
     const [errors, setErrors] = useState({}); 
+    const [submitForm, setSubmitForm] = useState({});
     const [isFormValid, setIsFormValid] = useState(false); 
     const [isFormChecked, setIsFormChecked] = useState(false); 
 
@@ -69,11 +71,18 @@ function ContactForm() {
     checkForm(name, message);
     // Validate form 
     validateForm(name, email, message); 
+    // Set final form to be submitted
+    setSubmitForm({
+        name: name,
+        email: email,
+        message: message,
+    })
   }
 
   useEffect(() => {
     if (isFormChecked && isFormValid) { 
-        console.log("both check & validation are true")
+        console.log("both check & validation are true");
+        addContactToDB(submitForm);
         // console.log("Name:", name);
         // console.log("Email:", email);
         // console.log("Message:", message);
