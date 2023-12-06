@@ -10,8 +10,7 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    // colors: {
-    //   primary: "#7E1F86",
+
     //   secondary: "white",
     //   accent: "white",
 
