@@ -5,7 +5,7 @@ export default function GetAQuote(){
         <h1 className="text-3xl mt-0 text-center mb-8">Get a Quote</h1>
        
         <form className="flex flex-col m-8 tablet:max-w-[600px] tablet:mx-auto p-5 gap-2 border border-primary rounded" action="https://formsubmit.co/728e4757f50eb5784d2d959cd5dcd793" method="POST">
-          <p className="text-left">If you have any questions or requests, use the form below to get in touch, and we'll address them promptly. If you have any specific questions, please visit our FAQ’s page.</p>
+          <p className="text-left">If you have any questions or requests, use the form below to get in touch, and we&apos;ll address them promptly. If you have any specific questions, please visit our FAQ&apos;s page.</p>
           {/* honeypot */}
           <input type="text" name="_honey" className="hidden" />
 
