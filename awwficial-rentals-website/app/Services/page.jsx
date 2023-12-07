@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Services() {
   return (
     <div className="flex flex-col items-center pb-28">
@@ -18,9 +20,11 @@ export default function Services() {
       <div
         className="flex flex-col items-start"
         style={{
-          width: "640px",
+          maxWidth: "640px",
+          width: "100%",
           padding: "20px",
-          gap: "20px",
+          //was originally gap: "20px"
+          gap: "10px",
           borderRadius: "10px",
           border: "1px solid #740E94",
           background: "var(--icon-color, #FFF)",
@@ -229,7 +233,8 @@ export default function Services() {
             alignSelf: "stretch",
           }}
         >
-          <button
+          <Link
+            href="/GetAQuote"
             className="flex flex-col items-center"
             style={{
               alignSelf: "stretch",
@@ -251,7 +256,7 @@ export default function Services() {
             >
               Book now
             </p>
-          </button>
+          </Link>
         </div>
       </div>
     </div>
