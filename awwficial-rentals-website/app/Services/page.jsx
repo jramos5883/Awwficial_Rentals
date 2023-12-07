@@ -20,7 +20,7 @@ export default function Services() {
         style={{
           width: "640px",
           padding: "20px",
-          gap: "10px",
+          gap: "20px",
           borderRadius: "10px",
           border: "1px solid #740E94",
           background: "var(--icon-color, #FFF)",
@@ -33,7 +33,7 @@ export default function Services() {
             padding: "10px",
             justifyContent: "center",
             alignItems: "center",
-            gap: "10px",
+            gap: "20px",
             alignSelf: "stretch",
             borderRadius: "10px 10px 0 0",
             background: "#EDE9FD",
@@ -72,6 +72,7 @@ export default function Services() {
         >
           32” stage that accommodates 3-4 people at a time
         </p>
+
         <hr
           style={{
             width: "100%",
