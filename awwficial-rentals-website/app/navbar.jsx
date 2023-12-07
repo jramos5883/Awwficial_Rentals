@@ -4,6 +4,7 @@ import Link from "next/link";
 import ResponsiveDrawer from "./components/ResponsiveDrawer.jsx";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
+import LargeButton from './components/LargeButton.jsx';
 
 export default function Navbar() {
   const theme = useTheme();
@@ -34,6 +35,7 @@ export default function Navbar() {
       ) : (
         <ResponsiveDrawer navBarLabels={navBarLabels} />
       )}
+      <LargeButton name={'Get A Quote'} href={'/GetAQuote'} />
     </div>
   );
 }
