@@ -30,8 +30,10 @@ module.exports = {
         secondary: "#FFFBDB",
         accent: "#D492E7",
         mainbg:"#FFFCF8",
-      },
+
+      }
     },
+
   },
   plugins: [],
 };
