@@ -23,7 +23,7 @@ export default function Navbar() {
     // I plan to make the navbar transparent later,
     // but I do like seeing the colors change with the breakpoints.
     // Helps me with responsive design.
-    <div className="flex flex-row items-center justify-between bg-[#EDE9FD]">
+    <div className="flex flex-row items-center justify-between bg-[#EDE9FD] h-[112px]">
       <Image
         src='/images/navbarLogo.png'
         width={194}
