@@ -10,15 +10,6 @@ module.exports = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    colors: {
-      primary: {
-        DEFAULT: "#7E1F86",
-        hover: "#A562AA"
-      },
-      secondary: "#FFFBDB",
-      accent: "#D492E7",
-      mainbg:"#FFFCF8",
-    },
     extend: {
       screens: {
         // Custom Break Points
@@ -31,7 +22,17 @@ module.exports = {
         desksm: "1920px",
         desklg: "2560px",
       },
+      colors: {
+        primary: {
+          DEFAULT: "#7E1F86",
+          hover: "#A562AA"
+        },
+        secondary: "#FFFBDB",
+        accent: "#D492E7",
+        mainbg:"#FFFCF8",
+      }
     },
+
   },
   plugins: [],
 };
