@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Services() {
   return (
-    <div className="flex flex-col items-center pb-28">
+    <div className="flex flex-col items-center pb-28 pl-8 pr-8">
       <p
         className="pt-8 pb-8"
         style={{
