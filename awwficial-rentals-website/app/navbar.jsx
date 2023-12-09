@@ -23,14 +23,14 @@ export default function Navbar() {
     // I plan to make the navbar transparent later,
     // but I do like seeing the colors change with the breakpoints.
     // Helps me with responsive design.
-    <div className="flex flex-row items-center justify-between bg-[#EDE9FD] h-[112px]">
+    <div className="flex flex-row items-center justify-between bg-[#EDE9FD] h-[112px] tablet:w-auto">
       <Image
         src='/images/navbarLogo.png'
         width={194}
         height={56}
         alt ='image of oscar carvente '
       />
-      <div className={isLargeScreen ? '' : 'hidden'}>
+      <div className='hidden tablet:flex tablet:flex-row tablet:justify-between tablet:items-center w-full border px-5 ml-5'>
         <BorderlessButton name={"Home"} href={"/"}/>
         <BorderlessButton name={"Services"} href={"/Services"}/>
         <BorderlessButton name={"Gallery"} href={"/GalleryPage"}/>
@@ -38,7 +38,7 @@ export default function Navbar() {
         <BorderlessButton name={"FAQ"} href={"/FAQs"}/>
         <LargeButton name={'Get A Quote'} href={'/GetAQuote'} />
       </div>
-      <div className='tablet:hidden'>
+      <div className='tablet:hidden w-full flex justify-end p-4'>
         <ResponsiveDrawer navBarLabels={navBarLabels} />
       </div>
     </div>
