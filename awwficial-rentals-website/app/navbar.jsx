@@ -10,7 +10,7 @@ import Image from 'next/image';
 
 export default function Navbar() {
   const theme = useTheme();
-  const isLargeScreen = useMediaQuery(theme.breakpoints.up("sm"));
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up("tablet"));
   const navBarLabels = [
     { label: "Home", route: "/" },
     { label: "Services", route: "/Services" },
@@ -23,19 +23,24 @@ export default function Navbar() {
     // I plan to make the navbar transparent later,
     // but I do like seeing the colors change with the breakpoints.
     // Helps me with responsive design.
-    <div className="flex flex-row items-center justify-between bg-[#EDE9FD] h-[112px] w-full">
+    <div className="flex flex-row items-center justify-between bg-[#EDE9FD] h-[112px]">
       <Image
         src='/images/navbarLogo.png'
         width={194}
         height={56}
         alt ='image of oscar carvente '
       />
-      <BorderlessButton name={"Home"} href={"/"}/>
-      <BorderlessButton name={"Services"} href={"/Services"}/>
-      <BorderlessButton name={"Gallery"} href={"/GalleryPage"}/>
-      <BorderlessButton name={"Contact"} href={"/Contact"}/>
-      <BorderlessButton name={"FAQ"} href={"/FAQs"}/>
-      <LargeButton name={'Get A Quote'} href={'/GetAQuote'} />
+      <div className={isLargeScreen ? '' : 'hidden'}>
+        <BorderlessButton name={"Home"} href={"/"}/>
+        <BorderlessButton name={"Services"} href={"/Services"}/>
+        <BorderlessButton name={"Gallery"} href={"/GalleryPage"}/>
+        <BorderlessButton name={"Contact"} href={"/Contact"}/>
+        <BorderlessButton name={"FAQ"} href={"/FAQs"}/>
+        <LargeButton name={'Get A Quote'} href={'/GetAQuote'} />
+      </div>
+      <div className='tablet:hidden'>
+        <ResponsiveDrawer navBarLabels={navBarLabels} />
+      </div>
     </div>
   );
 }
