@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from 'next/link';
 export default function ProductDescription() {
   return (
     <div className="p-4">
@@ -42,22 +43,24 @@ export default function ProductDescription() {
             Whether it's a wedding, corporate gala, or birthday bash, our
             photo booth adds a unique touch of excitement!
           </p>
-          <button
-            className="mt-4"
-            style={{
-              direction: "flex",
-              padding: "10px",
-              width: "100%",
-              justifyContent: "center",
-              gap: "10px",
-              alignSelf: "stretch",
-              borderRadius: "10px",
-              border: "2px solid #797673",
-              background: "#FFF",
-            }}
-          >
-            Get inspiration
-          </button>
+          <Link href='/GalleryPage'>
+            <button
+              className="mt-4"
+              style={{
+                direction: "flex",
+                padding: "10px",
+                width: "100%",
+                justifyContent: "center",
+                gap: "10px",
+                alignSelf: "stretch",
+                borderRadius: "10px",
+                border: "2px solid #797673",
+                background: "#FFF",
+              }}
+            >
+              Get inspiration
+            </button>
+          </Link>
         </div>
         <div className="tablet:order-1">
           <Image
