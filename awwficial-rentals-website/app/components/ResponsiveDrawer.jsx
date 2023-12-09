@@ -43,6 +43,7 @@ function ResponsiveDrawer({navBarLabels}) {
     <div>
         <IconButton
           onClick={handleDrawerToggle}
+          sizeLarge
         >
           <MenuIcon/>
         </IconButton>
