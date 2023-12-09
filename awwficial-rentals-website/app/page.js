@@ -5,7 +5,7 @@ import OpeningFrame from "./components/OpeningFrame";
 import EventCategories from "./components/EventCategories";
 export default function Home() {
   return (
-    <div className="flex flex-col items-center	">
+    <div className="min-w-full flex flex-col  items-center	">
       <OpeningFrame />
       <EventCategories />
       <ProductDescription />
