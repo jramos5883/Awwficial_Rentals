@@ -30,7 +30,7 @@ export default function Navbar() {
         height={56}
         alt ='image of oscar carvente '
       />
-      <div className='hidden tablet:flex tablet:flex-row tablet:justify-between tablet:items-center w-full border px-5 ml-5'>
+      <div className='hidden tablet:flex tablet:flex-row tablet:justify-between tablet:items-center w-full  px-5 ml-5'>
         <BorderlessButton name={"Home"} href={"/"}/>
         <BorderlessButton name={"Services"} href={"/Services"}/>
         <BorderlessButton name={"Gallery"} href={"/GalleryPage"}/>
