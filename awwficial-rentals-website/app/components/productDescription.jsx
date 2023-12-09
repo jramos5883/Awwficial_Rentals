@@ -1,10 +1,4 @@
-import DropboxVideoEmbed from "./video.comp";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import { ImCamera } from "react-icons/im";
-import { MdWifiTethering, Md360 } from "react-icons/md";
-import { FaPerson, FaRegFaceSmileBeam } from "react-icons/fa6";
-import { BsHandThumbsUp } from "react-icons/bs";
-
+import Image from "next/image";
 export default function ProductDescription() {
   return (
       <div className="grid grid-cols-1 justify-items-center tablet:grid-cols-2 p-2 rounded-2xl border-black ">
@@ -27,7 +21,7 @@ export default function ProductDescription() {
             photo booth adds a unique touch of excitement!
           </p>
         </div>
-      </div>
-
+      </section>
+    </main>
   );
 }
