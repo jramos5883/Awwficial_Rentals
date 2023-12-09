@@ -25,11 +25,11 @@ module.exports = {
       colors: {
         primary: {
           DEFAULT: "#7E1F86",
-          hover: "#A562AA"
+          hover: "#A562AA",
         },
         secondary: "#FFFBDB",
         accent: "#D492E7",
-        mainbg:"#FFFCF8",
+        mainbg: "#FFFCF8",
       },
     },
   },

@@ -1,84 +1,75 @@
-import DropboxVideoEmbed from "./video.comp";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import { ImCamera } from "react-icons/im";
-import { MdWifiTethering, Md360 } from "react-icons/md";
-import { FaPerson, FaRegFaceSmileBeam } from "react-icons/fa6";
-import { BsHandThumbsUp } from "react-icons/bs";
-
+import Image from "next/image";
 export default function ProductDescription() {
   return (
-    <main>
-      <section className="grid grid-cols-1 justify-items-center tablet:grid-cols-2 p-2">
-        <div className="flex flex-col justify-center items-center px-5 lapsm:max-w-lg laplg:max-w-xl">
-          <h2 className="text-center">Rewriting the Pose-ibilities</h2>
-          <p>
-            Step into a world where every angle tells a story. Our 360-degree
-            photo booth doesn&apos;t just capture moments; it creates
-            narratives. With a spin and a snap, you&apos;re in the spotlight
-            from all sides. It&apos;s photography reimagined, and you&apos;re
-            the star of the show!
-          </p>
+    <div className="p-4">
+      <div
+        className="flex flex-col items-center"
+        style={{
+          padding: "20px",
+          gap: "20px",
+          borderRadius: "10px",
+          border: "1px solid #740E94",
+          background: "var(--icon-color, #FFF)",
+        }}
+      >
+        <div className="grid grid-cols-1 tablet:grid-cols-2 gap-4">
+          <div className="tablet:order-2">
+            <p
+              style={{
+                color: "#000",
+                fontFamily: "Playfiar Display",
+                fontSize: "32px",
+                fontStyle: "normal",
+                fontWeight: "500",
+                lineHeight: "150%",
+              }}
+            >
+              Turn Down For What?!
+            </p>
+            <p
+              className="mt-4"
+              style={{
+                color: "#000",
+                fontFamily: "Lato",
+                fontSize: "24px",
+                fontStyle: "normal",
+                fontWeight: "400",
+                lineHeight: "150%",
+              }}
+            >
+              Our 360-degree photo booth is the ultimate crowd-pleaser. Elevate
+              the fun, capture every angle, and create unforgettable memories.
+              Whether it's a wedding, corporate gala, or birthday bash, our
+              photo booth adds a unique touch of excitement!
+            </p>
+            <button
+              className="mt-4"
+              style={{
+                direction: "flex",
+                padding: "10px",
+                width: "100%",
+                justifyContent: "center",
+                gap: "10px",
+                alignSelf: "stretch",
+                borderRadius: "10px",
+                border: "2px solid #797673",
+                background: "#FFF",
+              }}
+            >
+              Get inspiration
+            </button>
+          </div>
+          <div className="tablet:order-1">
+            <Image
+              src="https://s3-alpha-sig.figma.com/img/8128/af1c/60b89ba485a0de238fd5038c0e10560f?Expires=1702857600&Signature=I5Eyw3hFhIcOB5SlM6l4JlEXl0~F5Ndfz8076nwhL1BdjAnt75AYsYdqibLIfOn7a3IfFyX0e0ydMuQ6YtsLTGlzw52QLc~ahhl-mFJPNJpKK6KrRock28RPQex2MqURxzRNLNq-6lLg6ycIGeGSp4ubnU6xW4BlEuXkTRrL4M3KIxlIfhf2gbQ2hRW7WGYaLT09~yXgj0UOhUH-7N1QY4gHlnbKx-hodtuo0MFfHKEidAYItDjsapBUZ-vvRmKiMekExGW1amqNf4rQS3XCDoqCaPJ5RGXiR4Du0NmE0jR6cn1Rk8IrStMqTFQXKX5tFO2~X66Rg4CEZOMHptQidg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+              width={640} // Set the width of the image
+              height={440} // Set the height of the image
+              layout="responsive"
+              alt="Image Alt Text"
+            />
+          </div>
         </div>
-        <div className="m-auto">
-          <img
-            className="block w-full"
-            src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-            alt=""
-          />
-          {/* <DropboxVideoEmbed className="" videoLink="https://www.dropbox.com/scl/fi/epradd978l20pvktd6xrc/AwwficialCC_2.mov?rlkey=j1i1gkd3ejd3x00bjjx4xk9eg&dl=0" /> */}
-        </div>
-      </section>
-      <section className="text-center py-10 px-10">
-        <h2 className="pb-5">Why The 360 Photo Booth?</h2>
-        <div className="grid grid-cols-1 celllg:grid-cols-2 tablet:grid-cols-3 lapsm:grid-cols-6">
-          <article className="text-center px-3">
-            <ImCamera className="text-xl" />
-            <h5>Unforgettable Memories</h5>
-          </article>
-          <article className="text-center px-3">
-            <MdWifiTethering className="text-2xl" />
-            <h5>Instantly Sharable</h5>
-          </article>
-          <article className="text-center px-3">
-            <FavoriteBorderIcon />
-            <h5>Elevate Your Event</h5>
-          </article>
-          <article className="text-center px-3">
-            <div className="flex flex-col m-0 items-center">
-              <FaPerson className="text-xl" />
-              <Md360 className="text-xl" />
-            </div>
-            <h5 className="mt-3">Capture Every Angle</h5>
-          </article>
-          <article className="text-center px-3">
-            <FaRegFaceSmileBeam className="text-xl" />
-            <h5>Fun & Interactive</h5>
-          </article>
-          <article className="text-center px-3">
-            <BsHandThumbsUp className="text-xl" />
-            <h5>Hassle Free</h5>
-          </article>
-        </div>
-      </section>
-      <section className="grid grid-cols-1 justify-items-center tablet:grid-cols-2 p-2">
-        {/* <div>
-          <DropboxVideoEmbed className="h-10" videoLink="https://www.dropbox.com/scl/fi/epradd978l20pvktd6xrc/AwwficialCC_2.mov?rlkey=j1i1gkd3ejd3x00bjjx4xk9eg&dl=0" />
-        </div> */}
-        <img
-          className="block w-full"
-          src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-          alt=""
-        />
-        <div className="flex flex-col justify-center items-center px-5 lapsm:max-w-lg laplg:max-w-xl">
-          <h2 className="text-center"> Turn Down For What?!</h2>
-          <p>
-            Our 360-degree photo booth is the ultimate crowd-pleaser. Elevate
-            the fun, capture every angle, and create unforgettable memories.
-            Whether it&apos;s a wedding, corporate gala, or birthday bash, our
-            photo booth adds a unique touch of excitement!
-          </p>
-        </div>
-      </section>
-    </main>
+      </div>
+    </div>
   );
 }
