@@ -1,7 +1,6 @@
 "use client";
 import { FaPhone } from "react-icons/fa6"
 import { FiMail } from "react-icons/fi"
-import sendEmail from "../util/sendEmail";
 import ContactForm from "./ContactForm";
 
 export default function Contact() {
