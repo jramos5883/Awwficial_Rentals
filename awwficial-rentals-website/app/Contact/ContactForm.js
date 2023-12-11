@@ -91,43 +91,43 @@ function ContactForm() {
   }, [isFormChecked, isFormValid])
 
   return (
-    <div>
-        <form className="flex flex-col px-5 gap-2" method="POST" action="/form" onSubmit={handleSubmit}>
+    <div className="w-full">
+        <form className="flex flex-col items-start gap-[20px] flex-1" method="POST" action="/form" onSubmit={handleSubmit}>
         {/* honeypot */}
-        <input type="text" name="_honey" className="hidden" />
-        <input type="text" name="phoneNumber" className="opacity-0" />
+        <input type="text" name="_honey" className="hidden" aria-hidden="true" />
+        <input type="text" name="phoneNumber" className="opacity-0 absolute top-0 right-0 w-[1px] h-[1px]" aria-hidden="true"/>
         {/* Disable Captcha */}
         <input type="hidden" name="_captcha" value="false" />
-        <div className="grid grid-cols-1 lapsm:grid-cols-2 gap-3">
-            <div>
-                <label className="sr-only" htmlFor="name">Name</label>
+        <div className="flex justify-center items-center gap-[16px] w-full self-stretch">
+            <div className="flex flex-col items-start gap-[5.122px] w-[calc(50%-8px)]">
+                <label className="text-[15.3px] font-bold" htmlFor="name">Name</label>
                 <input 
-                    className="text-lg bg-inherit box-border w-full border py-1 border-yellow-500 placeholder:pl-2 placeholder:font-sans" 
+                    className="flex items-center gap-[6.403px] self-stretch py-[0px] px-[6.403px] rounded-[6.403px] border border-solid border-[1.281px] border-gray-400 focus:border-[#4B0063] focus:bg-[#F6E9FA]" 
                     id="name" type="text" name="name" placeholder="Name" 
                     required 
                 />
                 {errors.name && <p>{errors.name}</p>} 
             </div>
+            <div className="flex flex-col items-start gap-[5.122px]  w-[calc(50%-8px)]">
+                <label className="text-[15.3px] font-bold" htmlFor="email">Email</label>
+                <input 
+                    className="flex items-center gap-[6.403px] self-stretch py-[0px] px-[6.403px] rounded-[6.403px] border border-solid border-[1.281px] border-gray-400 focus:border-[#4B0063] focus:bg-[#F6E9FA]"  
+                    id="email" type="email" name="email" placeholder="Email"
+                    required 
+                />
+                {errors.email && <p>{errors.email}</p>} 
+            </div>
         </div>
-        <div>
-            <label className="sr-only" htmlFor="email">Email</label>
-            <input 
-                className="text-lg bg-inherit box-border w-full border  border-yellow-500 placeholder:pl-2 placeholder:font-sans py-1" 
-                id="email" type="email" name="email" placeholder="Email"
+        <div className="flex flex-col items-start gap-[5.122px] h-[194px] self-stretch">
+            <label className="text-[15.3px] font-bold" htmlFor="message">Message</label>
+            <textarea 
+                className="flex flex-1 items-center gap-[6.403px] self-stretch py-[0px] px-[6.403px] rounded-[6.403px] border border-solid border-[1.281px] border-gray-400 focus:border-[#4B0063] focus:bg-[#F6E9FA]"
+                id="message" type="text" name="message" placeholder="Your message here" 
                 required 
             />
-            {errors.email && <p>{errors.email}</p>} 
+            {errors.message && <p>{errors.message}</p>} 
         </div>
-        <div className="grow flex">
-        <label className="sr-only" htmlFor="message">Message</label>
-        <textarea 
-            className="grow text-lg bg-inherit px-2 w-full  border-yellow-500 placeholder:font-sans" 
-            id="message" type="text" name="message" placeholder="Message" 
-            required 
-        />
-        {errors.message && <p>{errors.message}</p>} 
-        </div>
-        <button className="py-2 px-5 border-0 bg-gradient-to-r rounded from-yellow-500 via-yellow-600 to-yellow-700 text-white font-bold hover:shadow-lg" type="submit">SEND</button>
+        <button className="text-[24px] text-white flex items-center justify-center gap-[10px] self-stretch py-[16px] px-[4px] rounded-[10px] bg-primary hover:bg-primary-hover" type="submit">Submit</button>
     </form>
   </div>
   )

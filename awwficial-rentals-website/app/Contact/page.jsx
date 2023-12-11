@@ -1,39 +1,37 @@
 "use client";
-import { FaPhone } from "react-icons/fa6"
-import { FiMail } from "react-icons/fi"
+import { FiMail, FiPhone } from "react-icons/fi";
+import { CiLocationOn } from "react-icons/ci";
 import ContactForm from "./ContactForm";
+import { playfairDisplay } from "../ui/fonts";
 
 export default function Contact() {
 
   // name, email, phone number and text area
   return (
-    <main className="bg-white text-black">
-      <div className="max-w-screen-xl grid grid-cols-1 tablet:grid-cols-2 mx-auto py-10">
-        <section className="mx-auto px-5 pb-5 box-border w-full tablet:pb-0">
-        <h1 className="text-3xl mt-0 text-center tablet:text-left bg-gradient-to-r from-yellow-600 via-yellow-500 to-yellow-600 inline-block text-transparent bg-clip-text">Contact Us Today!</h1>
-          <div className="text-yellow-900">
-            <p className="mb-10">
-              <span className="block">Comments or questions about our service?</span>
-              Please fill out the form and we&apos;ll get back to you as soon as possible!
-            </p>
-              <div className="flex mt-5">
-                <FaPhone className="text-2xl"/>
-                <div className="pl-5">
-                  <h5 className="m-0">Phone Number</h5>
-                  <p className="m-0">(000)000-0000</p>
-                </div>
-              </div>
-              <div className="flex mt-5">
-                <FiMail className="text-2xl"/>
-                <div className="pl-5">
-                  <h5 className="m-0">Email</h5>
-                  <p className="m-0">xxx@xxxxx.com</p>
-                </div>
-              </div>
+    <main className="text-black flex flex-col items-center justify-center">
+      <h1 className={`text-[36px] text-center mt-[20px] ${playfairDisplay.className}`}>Contact Us</h1>
+      <section className="flex flex-col items-start justify-start gap-[24px] p-[32px] w-[1077px] rounded-[10px] border border-solid border-[1px] border-[#740E94] bg-[#FFF] mt-[50px] mb-[75px]">
+        <p className="text-[24px] w-full">
+        For any questions that have not been answered in the FAQs, please use the form below and we’ll address them promptly.
+        </p>
+        <div className="flex items-start gap-[24px] self-stretch">
+          <div className="flex flex-col items-start gap-[24px] p-[12px] w-[330px]">
+            <div className="flex items-center gap-[16px] self-stretch">
+              <FiMail className="h-[35px] w-[35px]"/>
+              <p className="m-0 text-[20px] font-bold">awwficial@email.com</p>
+            </div>
+            <div className="flex items-center gap-[16px] self-stretch">
+              <FiPhone className="h-[35px] w-[35px]"/>
+              <p className="m-0 text-[20px] font-bold">(999)999-9999</p>
+            </div>
+            <div className="flex items-center gap-[16px] self-stretch">
+              <CiLocationOn className="h-[35px] w-[35px]"/>
+              <p className="m-0 text-[20px] font-bold">CA</p>
+            </div>
           </div>
-        </section>
-        <ContactForm />
-      </div>
+          <ContactForm />
+        </div>
+      </section>
     </main>
   );
 }
