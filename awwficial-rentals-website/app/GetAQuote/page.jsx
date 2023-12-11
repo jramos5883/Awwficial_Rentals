@@ -1,6 +1,8 @@
 "use client"
 import { playfairDisplay } from "../ui/fonts";
 import { useForm } from "react-hook-form"
+import { addData } from "../actions/addData-quote";
+
 
 export default function GetAQuote(){
 const {
@@ -12,9 +14,18 @@ const {
 
 console.log(errors)
 
-function onSubmit(data){
-console.log(data);
-}
+  async function processForm(data){
+    if(data._field) return;
+    
+    try{
+      const result = await addData(data);
+      console.debug(`data added successfully!`, result);
+    } catch(e) {
+      console.log(e);
+    }     
+
+    // reset()
+  }
 
 
   return(
