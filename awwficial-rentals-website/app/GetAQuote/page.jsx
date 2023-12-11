@@ -1,30 +1,35 @@
 "use client"
+
 import { playfairDisplay } from "../ui/fonts";
 import { useForm } from "react-hook-form"
 import { addData } from "../actions/addData-quote";
 
 
 export default function GetAQuote(){
-const {
-        register,
-        handleSubmit,
-        watch,
-        formState: { errors },
-        } = useForm();
+  const {
+          register,
+          handleSubmit,
+          watch,
+          reset,
+          formState: { errors },
+          } = useForm();
 
-console.log(errors)
+  // console.log(errors)
 
   async function processForm(data){
     if(data._field) return;
     
     try{
       const result = await addData(data);
-      console.debug(`data added successfully!`, result);
+      if(!result){
+        console.log("could not add to DB");
+        // should I add this error to state and show this error to customer saying "could not register information. Please contact xxx-xxx-xxxx directly?"
+      };
     } catch(e) {
       console.log(e);
     }     
 
-    // reset()
+    reset()
   }
 
 
@@ -32,11 +37,12 @@ console.log(errors)
     <main className="text-center text-black pb-52 pt-10 tablet:pt-5">
         <h1 className={`text-3xl tablet:text-4xl font-medium mt-0 text-center mb-8 ${playfairDisplay.className}`}>Get a Quote</h1>
        
-        <form  onSubmit={handleSubmit(onSubmit)} className="flex flex-col m-8 tablet:max-w-[600px] tablet:mx-auto p-5 border border-[#740E94] rounded-xl tablet:rounded-[20px] bg-white">
+        <form  onSubmit={handleSubmit(processForm)} className="flex flex-col m-8 tablet:max-w-[600px] tablet:mx-auto p-5 border border-[#740E94] rounded-xl tablet:rounded-[20px] bg-white">
           <p className="text-left text-base mb-6 tablet:mb-8">If you have any questions or requests, use the form below to get in touch, and we&apos;ll address them promptly. If you have any specific questions, please visit our FAQ&apos;s page.</p>
           {/* honeypot */}
           <input type="text" 
-                 name="_field" 
+                 name="_field"
+                 aria-hidden="true" 
                  className="opacity-0 absolute top-0 left-0 h-0 w-0 z-[-1]" 
                  {...register("_field")}/>
           <div className="mb-4 tablet:mb-5">
@@ -47,8 +53,9 @@ console.log(errors)
             <input id="fullName" 
                     type="text" 
                     name="fullName" 
+                    placeholder="John Doe"
                     className="px-1 w-full border border-[#BDBDBD] rounded tablet:rounded-[6.4px] focus:border-[#4B0063] focus:bg-[#F6E9FA]" 
-                    {...register("fullName", { required: "Please enter your Full Name." })}/>
+                    {...register("fullName", { required: "Please enter your Full name."})}/>
             {errors.fullName?.message &&(<p className="text-red-400 text-xs text-left">{errors.fullName.message}</p>)}
           </div>
           <div className="mb-4 tablet:mb-5">
@@ -57,10 +64,10 @@ console.log(errors)
                     <span className="text-[#F31C1C]">*</span>
             </label>
             <input id="email" 
-                    type="email" 
-                    name="email" 
+                    name="email"
+                    placeholder="xxx@xxxx.xxx"
                     className="px-1 w-full border border-[#BDBDBD] rounded tablet:rounded-[6.4px] focus:border-[#4B0063] focus:bg-[#F6E9FA]" 
-                    {...register("email", { required: "Please enter Email." })} />
+                    {...register("email", { required: "Please enter Email.", pattern:{value:/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/, message: "Please enter your email correctly. (ex. xxxx@gmail.com)"} })} />
             {errors.email?.message &&(<p className="text-red-400 text-xs text-left">{errors.email.message}</p>)}
           </div>
           <div className="mb-4 tablet:mb-5">
@@ -96,7 +103,8 @@ console.log(errors)
             </label>
             <input id="venue" 
                     type="text" 
-                    name="venue"  
+                    name="venue"
+                    placeholder="Los Angeles, CA"   
                     className="px-1 box-border w-full border border-[#BDBDBD] rounded tablet:rounded-[6.4px] focus:border-[#4B0063] focus:bg-[#F6E9FA]" 
                     {...register("venue", { required: "Please enter your Venue address."})}/>
           </div>
@@ -146,4 +154,3 @@ console.log(errors)
 
 //   }
 // ]
-
