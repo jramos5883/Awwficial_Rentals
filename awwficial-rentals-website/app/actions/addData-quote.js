@@ -1,5 +1,6 @@
 "use server"
 import supabase from '../client/supabase';
+import sgMail from 'sendgrid/mail';
 
 export async function addData(userData){
     console.debug(`addData started`);
