@@ -43,7 +43,7 @@ export default function GetAQuote(){
    * @returns 
    */
   async function processForm(data){
-    console.log(data);
+    // console.log(data);
     if(data._field) return;
     
     try{
