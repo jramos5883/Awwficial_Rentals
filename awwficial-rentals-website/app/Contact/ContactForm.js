@@ -7,7 +7,8 @@ function ContactForm() {
     const [submitForm, setSubmitForm] = useState({});
     const [isFormValid, setIsFormValid] = useState(false); 
     const [isFormChecked, setIsFormChecked] = useState(false); 
-
+    const [resNoError, setResNoError] = useState(null);
+    const [resError, setResError] = useState(null);
     // == Check form inputs  ==
     const checkForm = (name, message) => {
 
@@ -54,6 +55,10 @@ function ContactForm() {
             setIsFormValid(true); 
         }        
     }; 
+
+    const reset = () => {
+
+    }
     
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -80,18 +85,33 @@ function ContactForm() {
   }
 
   useEffect(() => {
+    const useEffectSubmit = async (data) => {
+        try {
+            const response = await addContactToDB(data);
+            console.log("response from await addToDB ", response);
+            if (response?.success) {
+                console.log(`Data added. db id#: ${response.success}`);
+                setResNoError(true);
+            } else {
+                console.log(`Error: ${response.error}`);
+                setResError(true);
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    }
     if (isFormChecked && isFormValid) { 
         console.log("both check & validation are true");
-        addContactToDB(submitForm);
-        // console.log("Name:", name);
-        // console.log("Email:", email);
-        // console.log("Message:", message);
+        useEffectSubmit(submitForm);
         // Rest of your code, e.g., submit the form
     } 
+    return () => {};
   }, [isFormChecked, isFormValid])
-
+  
   return (
     <div className="w-full">
+        {resError && <div>Uh oh! We encountered an error. Please contact us using @ awwficial@email.com or (999)999-9999.</div>}
+        {resNoError && <div>There was no error. Your form has been submitted!</div>}
         <form className="flex flex-col items-start gap-[20px] flex-1" method="POST" action="/form" onSubmit={handleSubmit}>
         {/* honeypot */}
         <input type="text" name="_honey" className="hidden" aria-hidden="true" />

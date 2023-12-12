@@ -11,21 +11,28 @@ async function sendEmail(data) {
         // **should rather go to the OWNER
         // *will include data.email + msg within the html
         from: process.env.SENDGRID_VERIFIED_EMAIL, // Use the email address or domain you verified above
-        subject: 'Sending with Twilio SendGrid is Fun by Tomomi for Test',
-        html: '<p>this is test to see if SendGrid is working</p><strong>and easy to do anywhere, even with Node.js</strong>',
+        subject: 'Contact Us form submission',
+        html:  `<div>
+        <h1>You have a new contact request</h1>
+        <ul>
+          <li>Sender Name: ${data.name}</li>
+          <li>Sender Email: ${data.email}</li>
+          <li>Sender Message: ${data.message}</li>
+        </ul>
+        </div>
+      `,
     };
     // **data.email will NOT be where the msg is sent 
     // **should rather go to the OWNER
     console.log(msg);
-    sgMail
-        .send(msg)
-        .then(() => {}, error => {
-            console.error(error);
-
-            if (error.response) {
-                console.error(error.response.body)
-            }
-        })
+    try{
+      console.log('sgMail started');
+      const res = await sgMail.send(msg);
+      console.log('sgMail finished', res);
+    } catch (err) {
+      console.log(err);
+      throw new Error('SendGrid email was not sent!');
+    } 
 }
 
 export async function addContactToDB(formData) {
@@ -43,10 +50,18 @@ export async function addContactToDB(formData) {
       .select()
 
     if (error) {
-      console.error('Error inserting data:', error.message);
+      console.error('Error inserting data:', error);
+      // add error handling for client-side for not saving to DB
+      return { error: err.message };
     } else {
-      console.log('Data inserted successfully:', data[0]);
-      sendEmail(data[0]);
-      // Handle success as needed
+      try {
+        console.log('Data inserted successfully:', data[0]);
+        await sendEmail(data[0]);
+        return {success: data[0].id}
+      } catch (err) {
+        console.log("SendGrid err is: ", err.message)
+        // handle error for SendGrid failure
+        return { error: err.message };
+      }
     }
 }
