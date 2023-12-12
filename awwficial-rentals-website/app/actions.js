@@ -6,12 +6,16 @@ async function sendEmail(data) {
     const apiKey = process.env.SENDGRID_API_KEY;
     sgMail.setApiKey(apiKey);
     const msg = {
-        to: data.email,
+        to: process.env.OWNER_EMAIL,
+        // **data.email will NOT be where the msg is sent 
+        // **should rather go to the OWNER
+        // *will include data.email + msg within the html
         from: process.env.SENDGRID_VERIFIED_EMAIL, // Use the email address or domain you verified above
         subject: 'Sending with Twilio SendGrid is Fun by Tomomi for Test',
         html: '<p>this is test to see if SendGrid is working</p><strong>and easy to do anywhere, even with Node.js</strong>',
     };
-    msg.to = data.email;
+    // **data.email will NOT be where the msg is sent 
+    // **should rather go to the OWNER
     console.log(msg);
     sgMail
         .send(msg)
