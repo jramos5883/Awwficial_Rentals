@@ -43,8 +43,9 @@ async function sendEmail(data) {
 
   // console.log(msg);
   try{
-    await sgMail.send(msg);
-    // res.sendStatus(200);
+    console.log('sgMail started sending email')
+    const res = await sgMail.send(msg);
+    console.log('sgMail finished', res);
   } catch (error) {
     console.log(error);
     // res.status(500).json(error.message);
