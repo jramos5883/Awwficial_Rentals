@@ -41,16 +41,24 @@ async function sendEmail(data) {
             `,
   };
 
-  console.log(msg);
-  sgMail
-      .send(msg)
-      .then(() => {}, error => {
-          console.error(error);
+  // console.log(msg);
+  try{
+    console.log('sgMail started sending email')
+    const res = await sgMail.send(msg);
+    console.log('sgMail finished', res);
+  } catch (error) {
+    console.log(error);
+    // res.status(500).json(error.message);
+  }
+  // sgMail
+  //     .send(msg)
+  //     .then(() => {}, error => {
+  //         console.error(error);
 
-          if (error.response) {
-              console.error(error.response.body)
-          }
-      })
+  //         if (error.response) {
+  //             console.error(error.response.body)
+  //         }
+  //     })
 }
 
 /**
