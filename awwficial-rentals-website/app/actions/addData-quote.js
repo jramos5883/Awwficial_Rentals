@@ -1,10 +1,74 @@
 "use server"
 import supabase from '../client/supabase';
-import sgMail from 'sendgrid/mail';
+import sgMail from '@sendgrid/mail';
 
+/**
+ * Function to send email using SendGrid
+    @param {object} data format:{ 
+                        id: 49, 
+                        created_at: '2023-12-11T23:32:40.246952+00:00',
+                        name: 'name of sender',
+                        email: 'email@address.com',
+                        phone: '111-111-1111',
+                        event_date: '2023-12-29',
+                        venue_location: 'Los Angeles, CA',
+                        rental_time_frame: '2 hours',
+                        comments: 'hello'
+                      }
+  environment variable need (make following variable in .env.local file):
+    SENDGRID_API_KEY, OWNER_EMAIL, SENDGRID_VERIFIED_EMAIL
+*/
+async function sendEmail(data) {
+  const apiKey = process.env.SENDGRID_API_KEY;
+  sgMail.setApiKey(apiKey);
+  const msg = {
+      to: process.env.OWNER_EMAIL,
+      from: process.env.SENDGRID_VERIFIED_EMAIL, // Use the email address or domain you verified above
+      subject: 'Sending with Twilio SendGrid is Fun by Tomomi for Test',
+      html: ` <div>
+              <h1>You have a new quote request</h1>
+              <ul>
+                <li>Sender Name:${data.name}</li>
+                <li>Sender Email:${data.email}</li>
+                <li>Sender Phone Number:${data.phone}</li>
+                <li>Event Date:${data.event_date}</li>
+                <li>Venue Location:${data.venue_location}</li>
+                <li>Rental Time Frame:${data.rental_time_frame}</li>
+                <li>Comments:${data.comments}</li>
+                <li>Date of Input:${data.created_at}</li>
+              </ul>
+              </div>
+            `,
+  };
+
+  console.log(msg);
+  sgMail
+      .send(msg)
+      .then(() => {}, error => {
+          console.error(error);
+
+          if (error.response) {
+              console.error(error.response.body)
+          }
+      })
+}
+
+/**
+  Function to add user's input data to supabase
+  @param {object} userData format{
+                                    _field: '', 
+                                    fullName: 'customer name', 
+                                    email: 'email@address.com', 
+                                    phone: '310-111-1111', 
+                                    eventDate: '2023-12-13',
+                                    timeFrame: "2 hours", 
+                                    venue: "Los Angeles, CA", 
+                                    comments: "this is comments"
+                                  }
+  @return if error: {failed:error}, if sucess: {success:data[0].id}
+*/
 export async function addData(userData){
     console.debug(`addData started`);
-    try{
       const { data, error } = await supabase
                               .from('QuoteForms')
                               .insert([
@@ -20,15 +84,14 @@ export async function addData(userData){
                               ])
                               .select()
       if(error){ 
-        throw new Error(`Could not add data. Error Message: ${error?.message}`)
+        return {failed:error}
+      } else{   
+        try{
+          await sendEmail(data[0])
+          console.log(data[0])
+          return {success:data[0].id}
+        } catch(e){
+          console.log(e);
+        }
       }
-      
-      if(data){
-        return data;
-      }
-
-    } catch(e) {
-        console.log(e);
-    }
-
 }

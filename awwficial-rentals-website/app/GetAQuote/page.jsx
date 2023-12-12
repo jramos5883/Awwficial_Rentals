@@ -1,11 +1,22 @@
 "use client"
-
+import { useEffect, useState } from "react";
 import { playfairDisplay } from "../ui/fonts";
 import { useForm } from "react-hook-form"
 import { addData } from "../actions/addData-quote";
+import { Alert } from "@mui/material";
 
+/**
+ * @component
+ * This will show get a quote input page.
+ * This component use React-hook-form pkg.
+ * 
+ * State1: resultMessage => Message used inside MUI <Alert> component
+ * State2: status => status will be either set to "error" or "success". This will affect the looks of MUI <Alert> component
+  */
 
 export default function GetAQuote(){
+  const [resultMessage, setResultMessage] = useState("");
+  const [status, setStatus] = useState("error");
   const {
           register,
           handleSubmit,
@@ -14,17 +25,39 @@ export default function GetAQuote(){
           formState: { errors },
           } = useForm();
 
-  // console.log(errors)
-
+  /**
+   * Calls server action addData. 
+   * If response returns success, set resultMessage and status to success messages.
+   * If response returns failed, set resultMessage to error message.
+   * this function will run if all input passes React Hook Form's validation. 
+   * @param {object} data format{
+                                    _field: '', 
+                                    fullName: 'customer name', 
+                                    email: 'email@address.com', 
+                                    phone: '310-111-1111', 
+                                    eventDate: '2023-12-13',
+                                    timeFrame: "2 hours", 
+                                    venue: "Los Angeles, CA", 
+                                    comments: "this is comments"
+                                  } 
+   * @returns 
+   */
   async function processForm(data){
+    console.log(data);
     if(data._field) return;
     
     try{
-      const result = await addData(data);
-      if(!result){
-        console.log("could not add to DB");
-        // should I add this error to state and show this error to customer saying "could not register information. Please contact xxx-xxx-xxxx directly?"
-      };
+      const response = await addData(data);
+      if(response?.success){
+        console.log(`Data added. db id#: ${response.success}`)
+        setResultMessage("Information Sent!");
+        setStatus("success")
+        
+      } else {
+        console.log(`Error: ${response.failed.message}`)
+        setResultMessage("Error Occurred. Please contact XXX-XXX-XXXX directly for inquiry.");
+        setStatus("error")
+      }
     } catch(e) {
       console.log(e);
     }     
@@ -35,16 +68,21 @@ export default function GetAQuote(){
 
   return(
     <main className="text-center text-black pb-52 pt-10 tablet:pt-5">
+      {/* this is Alert Message to show the result of submit */}
+      <Alert severity={status} className={`max-w-[600px] mx-auto mb-3 ${resultMessage.length ===0 ?"hidden": "inherit"}`}>{resultMessage}</Alert>
+        
         <h1 className={`text-3xl tablet:text-4xl font-medium mt-0 text-center mb-8 ${playfairDisplay.className}`}>Get a Quote</h1>
        
         <form  onSubmit={handleSubmit(processForm)} className="flex flex-col m-8 tablet:max-w-[600px] tablet:mx-auto p-5 border border-[#740E94] rounded-xl tablet:rounded-[20px] bg-white">
           <p className="text-left text-base mb-6 tablet:mb-8">If you have any questions or requests, use the form below to get in touch, and we&apos;ll address them promptly. If you have any specific questions, please visit our FAQ&apos;s page.</p>
+         
           {/* honeypot */}
           <input type="text" 
                  name="_field"
                  aria-hidden="true" 
                  className="opacity-0 absolute top-0 left-0 h-0 w-0 z-[-1]" 
                  {...register("_field")}/>
+              
           <div className="mb-4 tablet:mb-5">
             <label htmlFor="fullName" 
                     className="text-left block mb-2 tablet:mb-[5px] text-lg tablet:text-base font-bold">Full name 
