@@ -162,7 +162,6 @@ export default function GetAQuote(){
                     className="text-left block mb-2 tablet:mb-[5px] text-lg tablet:text-base font-bold">Share any additional details or further questions!
             </label>
             <textarea id="comments" 
-                      type="text" 
                       name="comments" 
                       className="px-1 box-border w-full border border-[#BDBDBD] rounded tablet:rounded-[6.4px] focus:border-[#4B0063] focus:bg-[#F6E9FA] h-[128px]"
                       {...register("comments")}/>
