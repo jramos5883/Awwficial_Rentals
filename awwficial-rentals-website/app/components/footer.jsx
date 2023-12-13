@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import LargeButton from "./LargeButton";
 export default function Footer() {
   return (
     <div
@@ -116,26 +116,7 @@ export default function Footer() {
           </Link>
         </div>
         <div className="pt-4 tablet:max-w-sm">
-          <button
-            className="flex justify-center items-center w-full py-4 px-16 rounded-lg"
-            style={{
-              background: "var(--primary, #7E1F86)",
-            }}
-          >
-            <p
-              style={{
-                color: "var(--icon-color, #FFF",
-                textAlign: "center",
-                fontFamily: "Lato",
-                fontSize: "20px",
-                fontStyle: "normal",
-                fontWeight: "500",
-                lineHeight: "150%",
-              }}
-            >
-              Book today
-            </p>
-          </button>
+          <LargeButton className={'self-stretch my-6 w-full'} name={'Book Now'} href={"/GetAQuote"}/>
         </div>
 
         <div className="pt-4 flex flex-row gap-8">
