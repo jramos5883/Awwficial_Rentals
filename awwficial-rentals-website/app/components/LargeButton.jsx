@@ -1,5 +1,8 @@
 import Link from 'next/link'
 import {lato} from '../ui/fonts.jsx';
+//classname includes additional tailwind style classes you want to add to the button
+// name is the button text
+// href is the link you want the button to navigate to
 export default function LargeButton ({className, name, href}) {
   return (
     <Link href={href}>
