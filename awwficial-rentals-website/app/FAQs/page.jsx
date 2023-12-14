@@ -115,7 +115,7 @@ export default function FAQs() {
     },
   ];
   return (
-    <div className="p-4 mx-auto max-w-[1600px]">
+    <div className="p-4 mx-auto max-w-[1600px] pb-32">
       <p
         className="text-center py-4"
         style={{
