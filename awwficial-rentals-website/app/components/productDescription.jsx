@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import {lato} from "../ui/fonts"
 export default function ProductDescription() {
   return (
     <div className="p-4 max-w-[1600px]">
@@ -45,7 +46,7 @@ export default function ProductDescription() {
             </p>
             <Link href="/GalleryPage">
               <button
-                className="mt-4"
+                className= 'mt-4'
                 style={{
                   direction: "flex",
                   padding: "10px",

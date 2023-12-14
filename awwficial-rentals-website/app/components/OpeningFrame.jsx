@@ -18,7 +18,7 @@ export default function OpeningFrame() {
       >
         <div
           className="text-white text-4xl justify-center items-center"
-          style={{ fontFamily: playfairDisplay.className }}
+          style={playfairDisplay.style}
         >
           Ready to make your event Awwficial?
         </div>

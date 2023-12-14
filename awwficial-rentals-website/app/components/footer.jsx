@@ -1,5 +1,6 @@
 import Link from "next/link";
 import LargeButton from "./LargeButton";
+import BorderlessButton from "./BorderlessButton";
 export default function Footer() {
   return (
     <div
@@ -39,81 +40,11 @@ export default function Footer() {
       </div>
       <div className="tablet:order-2">
         <div className="pt-4 flex flex-wrap justify-between w-full">
-          <Link href="">
-            <p
-              className="pr-2"
-              style={{
-                color: "#7E1F86",
-                fontFamily: "Lato",
-                fontSize: "24px",
-                fontStyle: "normal",
-                fontWeight: "700",
-                lineHeight: "normal",
-              }}
-            >
-              Home
-            </p>
-          </Link>
-          <Link href="">
-            <p
-              className="px-2"
-              style={{
-                color: "#7E1F86",
-                fontFamily: "Lato",
-                fontSize: "24px",
-                fontStyle: "normal",
-                fontWeight: "700",
-                lineHeight: "normal",
-              }}
-            >
-              Services
-            </p>
-          </Link>
-          <Link href="">
-            <p
-              className="px-2"
-              style={{
-                color: "#7E1F86",
-                fontFamily: "Lato",
-                fontSize: "24px",
-                fontStyle: "normal",
-                fontWeight: "700",
-                lineHeight: "normal",
-              }}
-            >
-              Gallery
-            </p>
-          </Link>
-          <Link href="">
-            <p
-              className="px-2"
-              style={{
-                color: "#7E1F86",
-                fontFamily: "Lato",
-                fontSize: "24px",
-                fontStyle: "normal",
-                fontWeight: "700",
-                lineHeight: "normal",
-              }}
-            >
-              FAQ
-            </p>
-          </Link>
-          <Link href="">
-            <p
-              className="px-2"
-              style={{
-                color: "#7E1F86",
-                fontFamily: "Lato",
-                fontSize: "24px",
-                fontStyle: "normal",
-                fontWeight: "700",
-                lineHeight: "normal",
-              }}
-            >
-              Contact
-            </p>
-          </Link>
+          <BorderlessButton href={''} name={'Home'}/>
+          <BorderlessButton href={'/Services'} name={'Services'}/>
+          <BorderlessButton href={'/GalleryPage'} name={'Gallery'}/>
+          <BorderlessButton href={'/FAQs'} name={'FAQ'}/>
+          <BorderlessButton href={'/Contact'} name={'Contact'}/>
         </div>
         <div className="pt-4 tablet:max-w-sm">
           <LargeButton className={'self-stretch my-6 w-full'} name={'Book Now'} href={"/GetAQuote"}/>
