@@ -47,7 +47,7 @@ async function sendEmail(data) {
     const res = await sgMail.send(msg);
     console.log('sgMail finished', res);
   } catch (error) {
-    console.log(error);
+    console.error(error);
     throw new Error("Email was not sent");
   }
 }
@@ -93,7 +93,7 @@ export async function addData(userData){
           console.log(data[0])
           return {success:data[0].id}
         } catch({name, message}){
-          console.log(message);
+          console.error(message);
           return {failed: {message}}
         }
       }

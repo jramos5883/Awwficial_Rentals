@@ -26,6 +26,7 @@ module.exports = {
         primary: {
           DEFAULT: "#7E1F86",
           hover: "#541D59",
+          active:"#39033D",
         },
         secondary: "#FFFBDB",
         accent: "#D492E7",

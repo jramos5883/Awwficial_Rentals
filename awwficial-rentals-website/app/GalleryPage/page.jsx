@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function GalleryPage() {
   return (
-    <div className="flex flex-col justify-center items-center pb-28 pl-4 pr-4">
+    <div className="flex flex-col justify-center items-center pb-52 desklg:pb-96 pl-4 pr-4">
       <p
         className="pt-8 pb-8"
         style={{

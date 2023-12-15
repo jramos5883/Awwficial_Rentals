@@ -1,7 +1,7 @@
 import Image from "next/image";
 export default function ClientsReviewsTests() {
   return (
-    <div className="p-4 mb-20">
+    <div className="p-4 mb-20 max-w-[1600px]">
       <div
         className="flex flex-col items-center"
         style={{
