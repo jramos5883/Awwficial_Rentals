@@ -1,11 +1,11 @@
-"use client";
-import { useEffect, useState } from "react";
+"use client"
+import { useState } from "react";
 import { playfairDisplay } from "../ui/fonts";
-import { useForm } from "react-hook-form";
+import { useForm } from "react-hook-form"
 import { addData } from "../actions/addData-quote";
 import { Alert } from "@mui/material";
+import SubmittedModal from "../components/SubmittedModal";
 
-//troubleshooting form submission to supabase and email to Tomomi
 
 /**
  * @component
@@ -17,8 +17,9 @@ import { Alert } from "@mui/material";
  */
 
 export default function GetAQuote() {
-  const [resultMessage, setResultMessage] = useState("");
-  const [status, setStatus] = useState("error");
+  // const [submittedStatus, setSubmittedStatus] = useState(true);
+  const [errorStatus, setErrorStatus] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
   const {
     register,
     handleSubmit,
@@ -45,24 +46,23 @@ export default function GetAQuote() {
    * @returns 
    */
   async function processForm(data) {
-    console.log(data);
+    // console.log(data);
     if (data._field) return;
-
+    setModalOpen(false);
+    setErrorStatus(false);
     try {
       const response = await addData(data);
       if (response?.success) {
         console.log(`Data added. db id#: ${response.success}`);
-        setResultMessage("Information Sent!");
-        setStatus("success");
+        setErrorStatus(false);
+        setModalOpen(true);
       } else {
         console.log(`Error: ${response.failed.message}`);
-        setResultMessage(
-          "Error Occurred. Please contact XXX-XXX-XXXX directly for inquiry."
-        );
-        setStatus("error");
+        setErrorStatus(true);
+        setModalOpen(false);
       }
     } catch (e) {
-      console.log(e);
+      console.error(e);
     }
 
     reset();
@@ -71,15 +71,15 @@ export default function GetAQuote() {
   return (
     <main className="text-center text-black pb-52 pt-10 tablet:pt-5">
       {/* this is Alert Message to show the result of submit */}
-      <Alert
-        severity={status}
-        className={`max-w-[600px] mx-auto mb-3 ${
-          resultMessage.length === 0 ? "hidden" : "inherit"
-        }`}
-      >
-        {resultMessage}
-      </Alert>
-
+      {errorStatus? (
+        <Alert
+          severity="error"
+          sx={{maxWidth:"600px", margin:'auto auto 20px auto'}}
+        >
+          Error Occurred. Please contact XXX-XXX-XXXX directly for inquiry.
+        </Alert>
+      ):""}
+      {(!errorStatus && modalOpen)? (<SubmittedModal setOpen={setModalOpen}/>): ""}     
       <h1
         className={`text-3xl tablet:text-4xl font-medium mt-0 text-center mb-8 ${playfairDisplay.className}`}
       >
