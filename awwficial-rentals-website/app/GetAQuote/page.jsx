@@ -76,7 +76,7 @@ export default function GetAQuote() {
           severity="error"
           sx={{maxWidth:"600px", margin:'auto auto 20px auto'}}
         >
-          Error Occurred. Please contact XXX-XXX-XXXX directly for inquiry.
+          An error occurred. Please contact XXX-XXX-XXXX directly for inquiry.
         </Alert>
       ):""}
       {(!errorStatus && modalOpen)? (<SubmittedModal setOpen={setModalOpen}/>): ""}     
@@ -120,7 +120,7 @@ export default function GetAQuote() {
             placeholder="John Doe"
             className="px-1 w-full border border-[#BDBDBD] rounded tablet:rounded-[6.4px] focus:border-[#4B0063] focus:bg-[#F6E9FA]"
             {...register("fullName", {
-              required: "Please enter your Full name.",
+              required: "Please enter your full name.",
             })}
           />
           {errors.fullName?.message && (
@@ -143,12 +143,12 @@ export default function GetAQuote() {
             placeholder="xxx@xxxx.xxx"
             className="px-1 w-full border border-[#BDBDBD] rounded tablet:rounded-[6.4px] focus:border-[#4B0063] focus:bg-[#F6E9FA]"
             {...register("email", {
-              required: "Please enter Email.",
+              required: "Please enter email.",
               pattern: {
                 value:
                   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
                 message:
-                  "Please enter your email correctly. (ex. xxxx@gmail.com)",
+                  "Please enter your email in the correct format. (ex. xxxx@gmail.com)",
               },
             })}
           />
@@ -173,11 +173,11 @@ export default function GetAQuote() {
             placeholder="123-456-7890"
             className="px-1 box-border w-full border border-[#BDBDBD] rounded tablet:rounded-[6.4px] focus:border-[#4B0063] focus:bg-[#F6E9FA]"
             {...register("phone", {
-              required: "Please enter Phone Number.",
+              required: "Please enter phone number.",
               pattern: {
                 value: /[0-9]{3}-[0-9]{3}-[0-9]{4}/,
                 message:
-                  "Please input phone number correctly. (ex. 123-456-7890)",
+                  "Please input phone number in the correct format. (ex. 123-456-7890)",
               },
             })}
           />
@@ -201,9 +201,14 @@ export default function GetAQuote() {
             name="eventDate"
             className="px-1 box-border w-full border border-[#BDBDBD] rounded tablet:rounded-[6.4px] focus:border-[#4B0063] focus:bg-[#F6E9FA] placeholder:text-gray-400"
             {...register("eventDate", {
-              required: "Please enter your Event Date.",
+              required: "Please enter your event date.",
             })}
           />
+          {errors.eventDate?.message && (
+            <p className="text-red-400 text-xs text-left">
+              {errors.eventDate.message}
+            </p>
+          )}
         </div>
         <div className="mb-4 tablet:mb-5">
           <label
@@ -220,9 +225,14 @@ export default function GetAQuote() {
             placeholder="Los Angeles, CA"
             className="px-1 box-border w-full border border-[#BDBDBD] rounded tablet:rounded-[6.4px] focus:border-[#4B0063] focus:bg-[#F6E9FA]"
             {...register("venue", {
-              required: "Please enter your Venue address.",
+              required: "Please enter your venue address.",
             })}
           />
+          {errors.venue?.message && (
+            <p className="text-red-400 text-xs text-left">
+              {errors.venue.message}
+            </p>
+          )}
         </div>
         <div className="mb-4 tablet:mb-5">
           <label
@@ -240,9 +250,14 @@ export default function GetAQuote() {
             className="px-1 box-border w-full border border-[#BDBDBD] rounded tablet:rounded-[6.4px] focus:border-[#4B0063] focus:bg-[#F6E9FA]"
             {...register("timeFrame", {
               required:
-                "Please enter the estimated Time Frame of a photo booth rental.",
+                "Please enter the estimated time frame of a photo booth rental.",
             })}
           />
+          {errors.timeFrame?.message && (
+            <p className="text-red-400 text-xs text-left">
+              {errors.timeFrame.message}
+            </p>
+          )}
         </div>
         <div className="mb-6 tablet:mb-5">
           <label

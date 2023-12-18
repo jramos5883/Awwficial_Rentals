@@ -16,6 +16,7 @@
     "@sendgrid/mail": "^8.0.0",
     "@supabase/supabase-js": "^2.39.0",
     "autoprefixer": "^10.4.15",
+    "date-fns": "^2.30.0",
     "next": "^14.0.4-canary.47",
     "postcss": "^8.4.30",
     "react": "18.2.0",

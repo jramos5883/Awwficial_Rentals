@@ -1,7 +1,7 @@
 "use server"
 import supabase from '../client/supabase';
 import sgMail from '@sendgrid/mail';
-
+import { format } from 'date-fns'
 /**
  * Function to send email using SendGrid
     @param {object} data format:{ 
@@ -35,7 +35,7 @@ async function sendEmail(data) {
                 <li>Venue Location:${data.venue_location}</li>
                 <li>Rental Time Frame:${data.rental_time_frame}</li>
                 <li>Comments:${data.comments}</li>
-                <li>Date of Input:${data.created_at}</li>
+                <li>Date of Input:${format(new Date(data.created_at),'MM/dd/yyyy')}</li>
               </ul>
               </div>
             `,
