@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import { playfairDisplay } from "../ui/fonts.jsx";
 export default function () {
   return (
     <div className="flex flex-col items-center p-4">

@@ -3,8 +3,7 @@ import { playfairDisplay } from "../ui/fonts.jsx";
 import bg from "/public/images/home-image.png";
 export default function OpeningFrame() {
   return (
-    <div className='w-full px-[20px] py-[40px]'>
-
+    <div className="w-full px-[20px] py-[40px] max-w-[1600px]">
       <div
         className=" md:w-[1300px] md:h-[330px] flex flex-col items-center justify-center  md:justify-end pb-[15px] md:pb-[47px] gap-[31px]"
         style={{
@@ -19,7 +18,7 @@ export default function OpeningFrame() {
       >
         <div
           className="text-white text-4xl justify-center items-center"
-          style={{ fontFamily: playfairDisplay.className }}
+          style={playfairDisplay.style}
         >
           Ready to make your event Awwficial?
         </div>
