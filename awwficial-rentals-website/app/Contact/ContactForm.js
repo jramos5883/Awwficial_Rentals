@@ -110,45 +110,52 @@ function ContactForm() {
   
   return (
     <div className="w-full">
-        {resError && <div>Uh oh! We encountered an error. Please contact us using @ awwficial@email.com or (999)999-9999.</div>}
-        {resNoError && <div>There was no error. Your form has been submitted!</div>}
-        <form className="flex flex-col items-start gap-[20px] flex-1" method="POST" action="/form" onSubmit={handleSubmit}>
-        {/* honeypot */}
-        <input type="text" name="_honey" className="hidden" aria-hidden="true" />
-        <input type="text" name="phoneNumber" className="opacity-0 absolute top-0 right-0 w-[1px] h-[1px]" aria-hidden="true"/>
-        {/* Disable Captcha */}
-        <input type="hidden" name="_captcha" value="false" />
-        <div className="flex justify-center items-center gap-[16px] w-full self-stretch">
-            <div className="flex flex-col items-start gap-[5.122px] w-[calc(50%-8px)]">
-                <label className="text-[15.3px] font-bold" htmlFor="name">Name</label>
-                <input 
-                    className="flex items-center gap-[6.403px] self-stretch py-[0px] px-[6.403px] rounded-[6.403px] border border-solid border-[1.281px] border-gray-400 focus:border-[#4B0063] focus:bg-[#F6E9FA]" 
-                    id="name" type="text" name="name" placeholder="Name" 
+        {resError && <div className="flex flex-col items-start justify-start gap-[24px]">
+            <p className="text-[36px]">Uh oh!</p>
+            <p>We encountered an error. Please contact us using @ awwficial@email.com or (999)999-9999.</p>
+        </div>}
+        {resNoError && <div className="flex flex-col items-start justify-start gap-[24px]">
+            <p className="text-[36px]">Submitted!</p>
+            <p>Please wait 3-5 business days to hear back.</p>
+        </div>}
+        {(resError || resNoError) ? null :
+            <form className="flex flex-col items-start gap-[20px] flex-1" method="POST" action="/form" onSubmit={handleSubmit}>
+            {/* honeypot */}
+            <input type="text" name="_honey" className="hidden" aria-hidden="true" />
+            <input type="text" name="phoneNumber" className="opacity-0 absolute top-0 right-0 w-[1px] h-[1px]" aria-hidden="true"/>
+            {/* Disable Captcha */}
+            <input type="hidden" name="_captcha" value="false" />
+            <div className="flex flex-col justify-start items-start md:flex-row md:justify-center md:items-center gap-[16px] w-full self-stretch">
+                <div className="flex flex-col items-start gap-[5.122px] w-[calc(50%-8px)]">
+                    <label className="text-[15.3px] font-bold" htmlFor="name">Name</label>
+                    <input 
+                        className="flex items-center gap-[6.403px] self-stretch py-[0px] px-[6.403px] rounded-[6.403px] border border-solid border-[1.281px] border-gray-400 focus:border-[#4B0063] focus:bg-[#F6E9FA]" 
+                        id="name" type="text" name="name" placeholder="Name" 
+                        required 
+                    />
+                    {errors.name && <p>{errors.name}</p>} 
+                </div>
+                <div className="flex flex-col items-start gap-[5.122px] w-[calc(50%-8px)]">
+                    <label className="text-[15.3px] font-bold" htmlFor="email">Email</label>
+                    <input 
+                        className="flex items-center gap-[6.403px] self-stretch py-[0px] px-[6.403px] rounded-[6.403px] border border-solid border-[1.281px] border-gray-400 focus:border-[#4B0063] focus:bg-[#F6E9FA]"  
+                        id="email" type="email" name="email" placeholder="Email"
+                        required 
+                    />
+                    {errors.email && <p>{errors.email}</p>} 
+                </div>
+            </div>
+            <div className="flex flex-col items-start gap-[5.122px] h-[194px] self-stretch">
+                <label className="text-[15.3px] font-bold" htmlFor="message">Message</label>
+                <textarea 
+                    className="flex flex-1 items-center gap-[6.403px] self-stretch py-[0px] px-[6.403px] rounded-[6.403px] border border-solid border-[1.281px] border-gray-400 focus:border-[#4B0063] focus:bg-[#F6E9FA]"
+                    id="message" type="text" name="message" placeholder="Your message here" 
                     required 
                 />
-                {errors.name && <p>{errors.name}</p>} 
+                {errors.message && <p>{errors.message}</p>} 
             </div>
-            <div className="flex flex-col items-start gap-[5.122px]  w-[calc(50%-8px)]">
-                <label className="text-[15.3px] font-bold" htmlFor="email">Email</label>
-                <input 
-                    className="flex items-center gap-[6.403px] self-stretch py-[0px] px-[6.403px] rounded-[6.403px] border border-solid border-[1.281px] border-gray-400 focus:border-[#4B0063] focus:bg-[#F6E9FA]"  
-                    id="email" type="email" name="email" placeholder="Email"
-                    required 
-                />
-                {errors.email && <p>{errors.email}</p>} 
-            </div>
-        </div>
-        <div className="flex flex-col items-start gap-[5.122px] h-[194px] self-stretch">
-            <label className="text-[15.3px] font-bold" htmlFor="message">Message</label>
-            <textarea 
-                className="flex flex-1 items-center gap-[6.403px] self-stretch py-[0px] px-[6.403px] rounded-[6.403px] border border-solid border-[1.281px] border-gray-400 focus:border-[#4B0063] focus:bg-[#F6E9FA]"
-                id="message" type="text" name="message" placeholder="Your message here" 
-                required 
-            />
-            {errors.message && <p>{errors.message}</p>} 
-        </div>
-        <button className="text-[24px] text-white flex items-center justify-center gap-[10px] self-stretch py-[16px] px-[4px] rounded-[10px] bg-primary hover:bg-primary-hover" type="submit">Submit</button>
-    </form>
+            <button className="bg-primary hover:bg-primary-hover text-white text-xl tablet:text-2xl px-4 py-2 rounded-md tablet:rounded-xl w-full" type="submit">Submit</button>
+        </form>}
   </div>
   )
 }
