@@ -29,7 +29,7 @@ export default function Navbar() {
           src='/images/navbarLogo.png'
           width={194}
           height={56}
-          alt ='image of oscar carvente '
+          alt ='Awwficial company logo.'
         />
         <div className='hidden tablet:flex tablet:flex-row tablet:justify-between tablet:items-center w-full gap-1'>
           <div className="tablet:flex tablet:flex-row tablet:justify-around tablet:items-center grow gap-1">
