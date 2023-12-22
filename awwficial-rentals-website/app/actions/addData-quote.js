@@ -2,10 +2,11 @@
 import supabase from '../client/supabase';
 import sgMail from '@sendgrid/mail';
 import { format } from 'date-fns'
+import { db } from './firebase';
+import { collection, addDoc } from "firebase/firestore"; 
 /**
  * Function to send email using SendGrid
     @param {object} data format:{ 
-                        id: 49, 
                         created_at: '2023-12-11T23:32:40.246952+00:00',
                         name: 'name of sender',
                         email: 'email@address.com',
@@ -35,7 +36,7 @@ async function sendEmail(data) {
                 <li>Venue Location:${data.venue_location}</li>
                 <li>Rental Time Frame:${data.rental_time_frame}</li>
                 <li>Comments:${data.comments}</li>
-                <li>Date of Input:${format(new Date(data.created_at),'MM/dd/yyyy')}</li>
+                <li>Date of Input:${format(data.created_at,'MM/dd/yyyy')}</li>
               </ul>
               </div>
             `,
@@ -53,7 +54,7 @@ async function sendEmail(data) {
 }
 
 /**
-  Function to add user's input data to supabase
+  Function to add user's input data to firebase and run sendEmail function
   @param {object} userData format{
                                     _field: '', 
                                     fullName: 'customer name', 
@@ -64,37 +65,36 @@ async function sendEmail(data) {
                                     venue: "Los Angeles, CA", 
                                     comments: "this is comments"
                                   }
-  @return if db error: returns {failed:{code: '42501', details: null, hint: null, message: 'xxxx'}} it's an example data.
-          if email error: returns {faied:{message: "xxxx"}}
-          if sucess: returns {success:data[0].id}
+  @return 
+  if error:
+    adding to firebase fail, sendEmail func won't run
+    returns {faied:{message: "xxxx"}}
+  if sucess: 
+    returns {success:data[0].id}
 */
 export async function addData(userData){
-    console.debug(`addData started`);
-      const { data, error } = await supabase
-                              .from('QuoteForms')
-                              .insert([
-                                  { 
-                                      name: userData.fullName, 
-                                      email: userData.email,
-                                      phone: userData.phone,
-                                      event_date: userData.eventDate,
-                                      venue_location: userData.venue,
-                                      rental_time_frame: userData.timeFrame,
-                                      comments: userData.comments
-                                  },
-                              ])
-                              .select()
-      if(error){ 
-        console.log(error)
-        return {failed:error}
-      } else{   
-        try{
-          await sendEmail(data[0])
-          console.log(data[0])
-          return {success:data[0].id}
-        } catch({name, message}){
-          console.error(message);
-          return {failed: {message}}
-        }
-      }
+    console.debug(`addData started`);    
+    const currentDate = new Date();
+
+    const formattedData ={      
+      name: userData.fullName, 
+      email: userData.email,
+      phone: userData.phone,
+      event_date: userData.eventDate,
+      venue_location: userData.venue,
+      rental_time_frame: userData.timeFrame,
+      comments: userData.comments,
+      created_at: currentDate
+    }
+
+    try{
+      const docRef = await addDoc(collection(db, "quote"), formattedData) 
+      console.log("Document written with ID: ", docRef.id);
+      await sendEmail(formattedData)
+      return {success:docRef.id}
+    } catch ({name, message}){
+      console.error(message);
+      return {failed: {message}}
+    }
+
 }
