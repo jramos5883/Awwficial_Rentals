@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { playfairDisplay } from "../ui/fonts";
 import { useForm } from "react-hook-form"
-import { addData } from "../actions/addData-quote";
+import { addData } from "../client/firebase";
 import { Alert } from "@mui/material";
 import SubmittedModal from "../components/SubmittedModal";
 
@@ -51,7 +51,8 @@ export default function GetAQuote() {
     setModalOpen(false);
     setErrorStatus(false);
     try {
-      const response = await addData(data);
+      const response = await addData(data, "quote");
+      console.log(response)
       if (response?.success) {
         console.log(`Data added. db id#: ${response.success}`);
         setErrorStatus(false);
@@ -79,7 +80,7 @@ export default function GetAQuote() {
           An error occurred. Please contact XXX-XXX-XXXX directly for inquiry.
         </Alert>
       ):""}
-      {(!errorStatus && modalOpen)? (<SubmittedModal setOpen={setModalOpen}/>): ""}     
+      {(!errorStatus && modalOpen)? (<SubmittedModal modalOpen={modalOpen} setModalOpen={setModalOpen}/>): ""}     
       <h1
         className={`text-3xl tablet:text-4xl font-medium mt-0 text-center mb-8 ${playfairDisplay.className}`}
       >

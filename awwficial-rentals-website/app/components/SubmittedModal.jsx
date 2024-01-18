@@ -14,21 +14,21 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="left" ref={ref} {...props} />;
 });
 
-export default function SubmittedModal({setOpen}) {
+export default function SubmittedModal({modalOpen, setModalOpen}) {
   // const [open, setOpen] = React.useState(true);
 
   const handleClickOpen = () => {
-    setOpen(true);
+    setModalOpen(true);
   };
 
   const handleClose = () => {
-    setOpen(false);
+    setModalOpen(false);
   };
 
   return (
     <React.Fragment>
       <Dialog
-        open={open}
+        open={modalOpen}
         TransitionComponent={Transition}
         keepMounted
         onClose={handleClose}
