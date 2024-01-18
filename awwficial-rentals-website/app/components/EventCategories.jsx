@@ -1,12 +1,12 @@
 import Image from "next/image";
-import { playfairDisplay } from "../ui/fonts.jsx";
+import { playfairDisplay } from "../ui/fonts";
 export default function () {
   return (
     <div className="flex flex-col items-center p-4">
       <p
         style={{
           color: "#000",
-          fontFamily: "Playfair Display",
+          fontFamily: `${playfairDisplay.style.fontFamily}`,
           fontSize: "36px",
           fontStyle: "normal",
           fontWeight: "400",
@@ -42,7 +42,7 @@ export default function () {
             <p
               style={{
                 color: "#FFFEF8",
-                fontFamily: "Playfair Display",
+                fontFamily: `${playfairDisplay.style.fontFamily}`,
                 fontSize: "33px",
                 fontStyle: "normal",
                 fontWeight: "500",
@@ -79,7 +79,7 @@ export default function () {
             <p
               style={{
                 color: "#FFFEF8",
-                fontFamily: "Playfair Display",
+                fontFamily: `${playfairDisplay.style.fontFamily}`,
                 fontSize: "33px",
                 fontStyle: "normal",
                 fontWeight: "500",
@@ -116,7 +116,7 @@ export default function () {
             <p
               style={{
                 color: "#FFFEF8",
-                fontFamily: "Playfair Display",
+                fontFamily: `${playfairDisplay.style.fontFamily}`,
                 fontSize: "33px",
                 fontStyle: "normal",
                 fontWeight: "500",
