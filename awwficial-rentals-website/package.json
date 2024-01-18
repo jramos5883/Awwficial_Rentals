@@ -14,7 +14,6 @@
     "@mui/icons-material": "^5.14.9",
     "@mui/material": "^5.14.10",
     "@sendgrid/mail": "^8.0.0",
-    "@supabase/supabase-js": "^2.39.0",
     "autoprefixer": "^10.4.15",
     "date-fns": "^2.30.0",
     "firebase": "^10.7.1",
