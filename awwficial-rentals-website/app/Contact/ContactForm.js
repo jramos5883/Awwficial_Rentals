@@ -125,8 +125,8 @@ function ContactForm() {
             <input type="text" name="phoneNumber" className="opacity-0 absolute top-0 right-0 w-[1px] h-[1px]" aria-hidden="true"/>
             {/* Disable Captcha */}
             <input type="hidden" name="_captcha" value="false" />
-            <div className="flex flex-col justify-start items-start md:flex-row md:justify-center md:items-center gap-[16px] w-full self-stretch">
-                <div className="flex flex-col items-start gap-[5.122px] w-[calc(50%-8px)]">
+            <div className="flex flex-col justify-start items-start lapsm:flex-row lapsm:justify-center lapsm:items-center gap-[16px] w-full self-stretch">
+                <div className="flex flex-col items-start gap-[5.122px] w-full lapsm:w-[calc(50%-8px)]">
                     <label className="text-[15.3px] font-bold" htmlFor="name">Name</label>
                     <input 
                         className="flex items-center gap-[6.403px] self-stretch py-[0px] px-[6.403px] rounded-[6.403px] border border-solid border-[1.281px] border-gray-400 focus:border-[#4B0063] focus:bg-[#F6E9FA]" 
@@ -135,7 +135,7 @@ function ContactForm() {
                     />
                     {errors.name && <p>{errors.name}</p>} 
                 </div>
-                <div className="flex flex-col items-start gap-[5.122px] w-[calc(50%-8px)]">
+                <div className="flex flex-col items-start gap-[5.122px] w-full lapsm:w-[calc(50%-8px)]">
                     <label className="text-[15.3px] font-bold" htmlFor="email">Email</label>
                     <input 
                         className="flex items-center gap-[6.403px] self-stretch py-[0px] px-[6.403px] rounded-[6.403px] border border-solid border-[1.281px] border-gray-400 focus:border-[#4B0063] focus:bg-[#F6E9FA]"  
