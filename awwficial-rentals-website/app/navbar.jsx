@@ -16,7 +16,7 @@ export default function Navbar() {
     { label: "Services", route: "/Services" },
     { label: "Gallery", route: "/GalleryPage" },
     { label: "Contact", route: "/Contact" },
-    { label: "FAQ", route: "/FAQ" },
+    { label: "FAQ", route: "/FAQs" },
     { label: "GetAQuote", route: "/GetAQuote" },
   ];
   return (
