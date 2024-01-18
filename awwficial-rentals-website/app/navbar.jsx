@@ -17,7 +17,7 @@ export default function Navbar() {
     { label: "Gallery", route: "/GalleryPage" },
     { label: "Contact", route: "/Contact" },
     { label: "FAQ", route: "/FAQs" },
-    { label: "GetAQuote", route: "/GetAQuote" },
+    { label: "Get A Quote", route: "/GetAQuote" },
   ];
   return (
     // I plan to make the navbar transparent later,
