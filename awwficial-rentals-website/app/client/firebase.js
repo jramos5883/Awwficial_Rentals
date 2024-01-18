@@ -76,7 +76,6 @@ export async function addData(userData, component){
     console.error(message);
     return {failed: {message}}
   }
-
 }
 
 
