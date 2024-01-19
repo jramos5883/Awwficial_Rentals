@@ -49,7 +49,7 @@ export default function ProductDescription() {
                 className= 'mt-4'
                 style={{
                   fontFamily:`${lato.style.fontFamily}`,
-                  fontWeight: "600",
+                  fontWeight: "700",
                   fontSize:"20px",
                   direction: "flex",
                   padding: "10px",
