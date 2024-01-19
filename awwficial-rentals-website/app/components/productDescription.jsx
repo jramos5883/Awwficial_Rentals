@@ -16,7 +16,7 @@ export default function ProductDescription() {
         }}
       >
         <div className="grid grid-cols-1 tablet:grid-cols-2 gap-4">
-          <div className="tablet:order-2">
+          <div className="tablet:order-2 flex flex-col justify-center">
             <p
               style={{
                 color: "#000",

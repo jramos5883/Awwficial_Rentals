@@ -17,7 +17,7 @@ export default function Navbar() {
     { label: "Gallery", route: "/GalleryPage" },
     { label: "Contact", route: "/Contact" },
     { label: "FAQ", route: "/FAQs" },
-    { label: "GetAQuote", route: "/GetAQuote" },
+    { label: "Get A Quote", route: "/GetAQuote" },
   ];
   return (
     // I plan to make the navbar transparent later,
@@ -25,12 +25,14 @@ export default function Navbar() {
     // Helps me with responsive design.
     <nav className="bg-[#EDE9FD] h-[112px] w-full flex items-center justify-center">
       <div className="flex flex-row items-center justify-between grow max-w-[1700px] px-3">
-        <Image
-          src='/images/navbarLogo.png'
-          width={194}
-          height={56}
-          alt ='Awwficial company logo.'
-        />
+        <Link href={"/"}>
+          <Image
+            src='/images/navbarLogo.png'
+            width={194}
+            height={56}
+            alt ='Awwficial company logo.'
+          />
+        </Link>
         <div className='hidden tablet:flex tablet:flex-row tablet:justify-between tablet:items-center w-full gap-1'>
           <div className="tablet:flex tablet:flex-row tablet:justify-around tablet:items-center grow gap-1">
             <BorderlessButton name={"Home"} href={"/"}/>
