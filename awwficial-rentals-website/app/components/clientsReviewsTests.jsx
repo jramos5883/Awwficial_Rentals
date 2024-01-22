@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { playfairDisplay } from "../ui/fonts";
 export default function ClientsReviewsTests() {
   return (
     <div className="p-4 mb-20 max-w-[1600px]">
@@ -17,7 +18,7 @@ export default function ClientsReviewsTests() {
             <p
               style={{
                 color: "#000",
-                fontFamily: "Playfiar Display",
+                fontFamily: `${playfairDisplay.style.fontFamily}`,
                 fontSize: "32px",
                 fontStyle: "normal",
                 fontWeight: "500",
@@ -30,7 +31,6 @@ export default function ClientsReviewsTests() {
               className="mt-4"
               style={{
                 color: "#000",
-                fontFamily: "Lato",
                 fontSize: "24px",
                 fontStyle: "normal",
                 fontWeight: "400",

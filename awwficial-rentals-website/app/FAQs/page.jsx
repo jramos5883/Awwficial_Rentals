@@ -6,7 +6,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AddSharpIcon from "@mui/icons-material/AddSharp";
 import RemoveSharpIcon from "@mui/icons-material/RemoveSharp";
 import Box from "@mui/material/Box";
-
+import { playfairDisplay, lato } from "../ui/fonts";
 const CustomExpandIcon = () => {
   return (
     <Box
@@ -119,7 +119,7 @@ export default function FAQs() {
       <p
         className="text-center py-4"
         style={{
-          fontFamily: "Playfair Display",
+          fontFamily: playfairDisplay.style.fontFamily,
           fontSize: "36px",
           fontWeight: "400",
           lineHeight: "normal",
@@ -180,7 +180,7 @@ export default function FAQs() {
               <Typography
                 sx={{
                   color: "#000",
-                  fontFamily: "Playfair Display",
+                  fontFamily: playfairDisplay.style.fontFamily,
                   fontSize: "32px",
                   fontWeight: "600",
                 }}
@@ -191,7 +191,7 @@ export default function FAQs() {
             <AccordionDetails>
               <Typography
                 sx={{
-                  fontFamily: "Lato",
+                  fontFamily: lato.style.fontFamily,
                   fontSize: "23px",
                   fontWeight: "400",
                 }}

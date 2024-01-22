@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import {lato} from "../ui/fonts"
+import { playfairDisplay } from "../ui/fonts";
+import {lato} from '../ui/fonts';
 export default function ProductDescription() {
   return (
     <div className="p-4 max-w-[1600px]">
@@ -19,7 +20,7 @@ export default function ProductDescription() {
             <p
               style={{
                 color: "#000",
-                fontFamily: "Playfiar Display",
+                fontFamily: `${playfairDisplay.style.fontFamily}`,
                 fontSize: "32px",
                 fontStyle: "normal",
                 fontWeight: "500",
@@ -32,7 +33,6 @@ export default function ProductDescription() {
               className="mt-4"
               style={{
                 color: "#000",
-                fontFamily: "Lato",
                 fontSize: "24px",
                 fontStyle: "normal",
                 fontWeight: "400",
@@ -48,6 +48,9 @@ export default function ProductDescription() {
               <button
                 className= 'mt-4'
                 style={{
+                  fontFamily:`${lato.style.fontFamily}`,
+                  fontWeight: "700",
+                  fontSize:"20px",
                   direction: "flex",
                   padding: "10px",
                   width: "100%",
