@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { playfairDisplay } from "../ui/fonts";
 
 export default function GalleryPage() {
   return (
@@ -7,7 +8,7 @@ export default function GalleryPage() {
         className="pt-8 pb-8"
         style={{
           color: "#000",
-          fontFamily: "Playfair Display",
+          fontFamily: `${playfairDisplay.style.fontFamily}`,
           fontSize: "36px",
           fontStyle: "normal",
           fontWeight: "400",
@@ -49,7 +50,7 @@ export default function GalleryPage() {
             <p
               style={{
                 color: "#FFFEF8",
-                fontFamily: "Playfair Display",
+                fontFamily: `${playfairDisplay.style.fontFamily}`,
                 fontSize: "33px",
                 fontStyle: "normal",
                 fontWeight: "500",
@@ -86,7 +87,7 @@ export default function GalleryPage() {
             <p
               style={{
                 color: "#FFFEF8",
-                fontFamily: "Playfair Display",
+                fontFamily: `${playfairDisplay.style.fontFamily}`,
                 fontSize: "33px",
                 fontStyle: "normal",
                 fontWeight: "500",
@@ -124,7 +125,7 @@ export default function GalleryPage() {
             <p
               style={{
                 color: "#FFFEF8",
-                fontFamily: "Playfair Display",
+                fontFamily: `${playfairDisplay.style.fontFamily}`,
                 fontSize: "33px",
                 fontStyle: "normal",
                 fontWeight: "500",
@@ -161,7 +162,7 @@ export default function GalleryPage() {
             <p
               style={{
                 color: "#FFFEF8",
-                fontFamily: "Playfair Display",
+                fontFamily: `${playfairDisplay.style.fontFamily}`,
                 fontSize: "33px",
                 fontStyle: "normal",
                 fontWeight: "500",

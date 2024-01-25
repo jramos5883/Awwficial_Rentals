@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { addContactToDB } from "../actions/actions";
+import { addData } from "../client/firebase";
 
 function ContactForm() {
     const [errors, setErrors] = useState({}); 
@@ -87,13 +87,13 @@ function ContactForm() {
   useEffect(() => {
     const useEffectSubmit = async (data) => {
         try {
-            const response = await addContactToDB(data);
+            const response = await addData(data, "contact");
             console.log("response from await addToDB ", response);
             if (response?.success) {
                 console.log(`Data added. db id#: ${response.success}`);
                 setResNoError(true);
             } else {
-                console.log(`Error: ${response.error}`);
+                console.log(`Error: ${response.failed}`);
                 setResError(true);
             }
         } catch (err) {
@@ -112,7 +112,7 @@ function ContactForm() {
     <div className="w-full">
         {resError && <div className="flex flex-col items-start justify-start gap-[24px]">
             <p className="text-[36px]">Uh oh!</p>
-            <p>We encountered an error. Please contact us using @ awwficial@email.com or (999)999-9999.</p>
+             <p>We encountered an error. Please contact us using @ awwficial@email.com or (999)999-9999.</p>
         </div>}
         {resNoError && <div className="flex flex-col items-start justify-start gap-[24px]">
             <p className="text-[36px]">Submitted!</p>
@@ -142,7 +142,7 @@ function ContactForm() {
                         id="email" type="email" name="email" placeholder="Email"
                         required 
                     />
-                    {errors.email && <p>{errors.email}</p>} 
+                    {errors.email && <p className="text-xs text-red-600">{errors.email}</p>} 
                 </div>
             </div>
             <div className="flex flex-col items-start gap-[5.122px] h-[194px] self-stretch">

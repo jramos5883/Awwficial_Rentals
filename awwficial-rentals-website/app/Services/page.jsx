@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import { playfairDisplay } from "../ui/fonts";
 export default function Services() {
   return (
     <div className="flex flex-col items-center pb-52 desklg:pb-60 pl-8 pr-8">
@@ -7,7 +7,7 @@ export default function Services() {
         className="pt-8 pb-8"
         style={{
           color: "#000",
-          fontFamily: "Playfair Display, serif",
+          fontFamily: `${playfairDisplay.style.fontFamily}, serif`,
           fontSize: "36px",
           fontStyle: "normal",
           fontWeight: 400,
@@ -46,7 +46,7 @@ export default function Services() {
           <p
             style={{
               color: "#000",
-              fontFamily: "Playfair Display, serif",
+              fontFamily: `${playfairDisplay.style.fontFamily}, serif`,
               fontSize: "32px",
               fontStyle: "normal",
               fontWeight: "400",
@@ -67,7 +67,6 @@ export default function Services() {
           className=""
           style={{
             color: "#000",
-            fontFamily: "Lato",
             fontSize: "24px",
             fontStyle: "normal",
             fontWeight: "400",
@@ -88,7 +87,6 @@ export default function Services() {
           className=""
           style={{
             color: "#000",
-            fontFamily: "Lato",
             fontSize: "24px",
             fontStyle: "normal",
             fontWeight: "400",
@@ -102,7 +100,6 @@ export default function Services() {
           className=""
           style={{
             color: "#000",
-            fontFamily: "Lato",
             fontSize: "24px",
             fontStyle: "normal",
             fontWeight: "400",
@@ -116,7 +113,6 @@ export default function Services() {
           className=""
           style={{
             color: "#000",
-            fontFamily: "Lato",
             fontSize: "24px",
             fontStyle: "normal",
             fontWeight: "400",
@@ -130,7 +126,6 @@ export default function Services() {
           className=""
           style={{
             color: "#000",
-            fontFamily: "Lato",
             fontSize: "24px",
             fontStyle: "normal",
             fontWeight: "400",
@@ -144,7 +139,6 @@ export default function Services() {
           className=""
           style={{
             color: "#000",
-            fontFamily: "Lato",
             fontSize: "24px",
             fontStyle: "normal",
             fontWeight: "400",
@@ -158,7 +152,6 @@ export default function Services() {
           className=""
           style={{
             color: "#000",
-            fontFamily: "Lato",
             fontSize: "24px",
             fontStyle: "normal",
             fontWeight: "400",
@@ -172,7 +165,6 @@ export default function Services() {
           className=""
           style={{
             color: "#000",
-            fontFamily: "Lato",
             fontSize: "24px",
             fontStyle: "normal",
             fontWeight: "400",
@@ -186,7 +178,6 @@ export default function Services() {
           className=""
           style={{
             color: "#000",
-            fontFamily: "Lato",
             fontSize: "24px",
             fontStyle: "normal",
             fontWeight: "400",
@@ -200,7 +191,6 @@ export default function Services() {
           className=""
           style={{
             color: "#000",
-            fontFamily: "Lato",
             fontSize: "24px",
             fontStyle: "normal",
             fontWeight: "400",
@@ -214,7 +204,6 @@ export default function Services() {
           className=""
           style={{
             color: "#000",
-            fontFamily: "Lato",
             fontSize: "24px",
             fontStyle: "normal",
             fontWeight: "400",
@@ -247,7 +236,6 @@ export default function Services() {
             <p
               style={{
                 color: "var(--action-primar-inverted, var(--icon-color, #FFF))",
-                fontFamily: "Lato",
                 fontSize: "18px",
                 fontStyle: "normal",
                 fontWeight: "600",

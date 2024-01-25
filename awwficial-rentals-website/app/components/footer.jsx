@@ -17,7 +17,7 @@ export default function Footer() {
           <p
             style={{
               color: "#000",
-              fontFamily: "Playfair Display",
+              fontFamily: `${playfairDisplay.style.fontFamily}`,
               fontSize: "36px",
               fontStyle: "normal",
               fontWeight: "400",
@@ -30,7 +30,6 @@ export default function Footer() {
             className="pt-4"
             style={{
               color: "#000",
-              fontFamily: "Lato",
               fontSize: "24px",
               fontStyle: "normal",
               fontWeight: "400",
@@ -42,7 +41,7 @@ export default function Footer() {
         </div>
         <div className="tablet:order-2">
           <div className="pt-4 flex flex-wrap justify-between w-full">
-            <BorderlessButton href={''} name={'Home'}/>
+            <BorderlessButton href={'/'} name={'Home'}/>
             <BorderlessButton href={'/Services'} name={'Services'}/>
             <BorderlessButton href={'/GalleryPage'} name={'Gallery'}/>
             <BorderlessButton href={'/FAQs'} name={'FAQ'}/>
