@@ -8,7 +8,7 @@ const DropboxVideoEmbed = ({ videoLink }) => {
   );
 
   return (
-    <video className="w-full" autoPlay loop muted>
+    <video  className="object-cover h-[500px] w-[1600px]"autoPlay loop muted>
       <source src={directLink} type="video/mp4" />
       Your browser does not support the video tag.
     </video>
