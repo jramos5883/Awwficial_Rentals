@@ -18,11 +18,11 @@ export default function Contact() {
           <div className="flex flex-col items-center pt-1 md:pt-4 md:items-start gap-[16px] md:gap-[24px] md:w-[330px]">
             <div className="flex items-center gap-[16px] self-stretch">
               <FiMail className="h-[18px] w-[18px] cellsm:h-[30px] cellsm:w-[30px] md:h-[35px] md:w-[35px]"/>
-              <p className="m-0 text-base cellsm:text-[20px] font-bold">awwficial@email.com</p>
+              <p className="m-0 text-base cellsm:text-[20px] font-bold">thomas@awwficial.rentals</p>
             </div>
             <div className="flex items-center gap-[16px] self-stretch">
               <FiPhone className="h-[18px] w-[18px] cellsm:h-[30px] cellsm:w-[30px] md:h-[35px] md:w-[35px]"/>
-              <p className="m-0 ttext-base cellsm:text-[20px] font-bold">(999)999-9999</p>
+              <p className="m-0 ttext-base cellsm:text-[20px] font-bold">(626)838-2265</p>
             </div>
             <div className="flex items-center gap-[16px] self-stretch">
               <FiMapPin className="h-[18px] w-[18px] cellsm:h-[30px] cellsm:w-[30px]  md:h-[35px] md:w-[35px]"/>

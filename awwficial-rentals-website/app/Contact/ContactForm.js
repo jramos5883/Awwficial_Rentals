@@ -1,6 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import { addData } from "../client/firebase";
+import { Alert } from "@mui/material";
+import { playfairDisplay } from "../ui/fonts";
 
 function ContactForm() {
     const [errors, setErrors] = useState({}); 
@@ -110,12 +112,16 @@ function ContactForm() {
   
   return (
     <div className="w-full">
-        {resError && <div className="flex flex-col items-start justify-start gap-[24px]">
-            <p className="text-[36px]">Uh oh!</p>
-             <p>We encountered an error. Please contact us using @ awwficial@email.com or (999)999-9999.</p>
+        {resError && <div className="flex justify-center items-center gap-[24px] md:pt-10">
+            <Alert
+            severity="error"
+            sx={{maxWidth:"600px", margin:"auto auto 20px auto", textAlign: "left"}}
+            >
+            We encountered an error. <br />Please contact us using thomas@awwficial.rentals or (626)838-2265.
+            </Alert> 
         </div>}
-        {resNoError && <div className="flex flex-col items-start justify-start gap-[24px]">
-            <p className="text-[36px]">Submitted!</p>
+        {resNoError && <div className="flex flex-col items-start justify-start gap-[24px] p-5 md:m-5 shadow-[0_0.5px_20px_0_rgba(116,14,148,0.16)] rounded-xl">
+            <p className={`text-3xl lapsm:text-4xl ${playfairDisplay.className}`}>Submitted!</p>
             <p>Please wait 3-5 business days to hear back.</p>
         </div>}
         {(resError || resNoError) ? null :
