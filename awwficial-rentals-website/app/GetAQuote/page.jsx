@@ -75,9 +75,9 @@ export default function GetAQuote() {
       {errorStatus? (
         <Alert
           severity="error"
-          sx={{maxWidth:"600px", margin:'auto auto 20px auto'}}
+          sx={{maxWidth:"600px", margin:"auto auto 20px auto", textAlign: "left"}}
         >
-          An error occurred. Please contact XXX-XXX-XXXX directly for inquiry.
+          We encountered an error. <br />Please contact us using thomas@awwficial.rentals or (626)838-2265.
         </Alert>
       ):""}
       {(!errorStatus && modalOpen)? (<SubmittedModal modalOpen={modalOpen} setModalOpen={setModalOpen}/>): ""}     
