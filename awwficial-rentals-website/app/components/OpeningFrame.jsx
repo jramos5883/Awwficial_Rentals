@@ -6,22 +6,14 @@ import DropboxVideoEmbed from "./video.comp";
 export default function OpeningFrame() {
 
   return (
-    <div className=" w-full px-[20px] py-[40px] max-w-[1600px] min-h-min justify-center items-center relative ">
-      <div className='object-cover h-[500px] w-full border'>
-
+    <div className="min-h-min justify-center items-center relative -z-10">
         <DropboxVideoEmbed videoLink="https://www.dropbox.com/scl/fi/dhfgohtdz00h0c6ne5gga/Awwficial-Rentals-Promo-Video.mp4?rlkey=jv3hk10zb2ywcqt7lkmr4680l&dl=0" />
+      <div className='w-full h-full absolute top-0 left-0 flex flex-col px-10 justify-center items-center'>
+        <p className={`text-white text-center font-extrabold text-2xl tablet:text-4xl mb-3 ${playfairDisplay.className}`}>
+        Ready to make your event <span className="block tablet:inline text-center">Awwficial?</span>
+        </p>
+        <LargeButton className={'mt-3 tablet:mt-8'} name={"View Pricing"} href={"/Services"} />
       </div>
-      <div className='w-full h-full absolute bottom-1/2 left-1/3' >
-        <div className="  text-white text-4xl mb-3" style={playfairDisplay.style}>
-        Ready to make your event Awwficial?
-        </div>
-        <LargeButton className={'mt-3 '} name={"View Pricing"} href={"/Services"} />
-      </div>
-
-
-
-
-
     </div>
   );
 }
