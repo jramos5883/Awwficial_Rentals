@@ -116,17 +116,11 @@ export default function FAQs() {
   ];
   return (
     <div className="p-4 mx-auto max-w-[1600px] pb-32">
-      <p
-        className="text-center py-4"
-        style={{
-          fontFamily: playfairDisplay.style.fontFamily,
-          fontSize: "36px",
-          fontWeight: "400",
-          lineHeight: "normal",
-        }}
+      <h1
+        className={`text-center text-4xl py-4 front ${playfairDisplay.className}`}
       >
         FAQ
-      </p>
+      </h1>
       {arrOfQuestions.map((item) => {
         return (
           <Accordion
@@ -181,7 +175,10 @@ export default function FAQs() {
                 sx={{
                   color: "#000",
                   fontFamily: playfairDisplay.style.fontFamily,
-                  fontSize: "32px",
+                  fontSize:{
+                    xs:"16px",
+                    sm:"32px",
+                  },
                   fontWeight: "600",
                 }}
               >
@@ -192,7 +189,10 @@ export default function FAQs() {
               <Typography
                 sx={{
                   fontFamily: lato.style.fontFamily,
-                  fontSize: "23px",
+                  fontSize:{
+                    xs:"16px",
+                    sm:"23px",
+                  },
                   fontWeight: "400",
                 }}
               >
