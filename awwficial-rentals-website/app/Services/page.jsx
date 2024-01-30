@@ -3,7 +3,7 @@ import { playfairDisplay } from "../ui/fonts";
 export default function Services() {
   return (
     <div className="flex flex-col items-center pb-52 desklg:pb-60 pl-8 pr-8">
-      <p
+      <h1
         className="pt-8 pb-8"
         style={{
           color: "#000",
@@ -15,7 +15,7 @@ export default function Services() {
         }}
       >
         Rental Inclusions
-      </p>
+      </h1>
 
       <div
         className="flex flex-col items-start"
@@ -43,18 +43,11 @@ export default function Services() {
             background: "#EDE9FD",
           }}
         >
-          <p
-            style={{
-              color: "#000",
-              fontFamily: `${playfairDisplay.style.fontFamily}, serif`,
-              fontSize: "32px",
-              fontStyle: "normal",
-              fontWeight: "400",
-              lineHeight: "150%",
-            }}
+          <h3
+            className={`text-2xl tablet:text-[32px] leading-normal ${playfairDisplay.className}`}
           >
             Features
-          </p>
+          </h3>
         </div>
         <hr
           style={{
@@ -64,14 +57,7 @@ export default function Services() {
           }}
         />
         <p
-          className=""
-          style={{
-            color: "#000",
-            fontSize: "24px",
-            fontStyle: "normal",
-            fontWeight: "400",
-            lineHeight: "normal",
-          }}
+          className="text-lg tablet:text-2xl"
         >
           32” stage that accommodates 3-4 people at a time
         </p>
@@ -84,131 +70,61 @@ export default function Services() {
           }}
         />
         <p
-          className=""
-          style={{
-            color: "#000",
-            fontSize: "24px",
-            fontStyle: "normal",
-            fontWeight: "400",
-            lineHeight: "normal",
-          }}
+          className="text-lg tablet:text-2xl"
         >
           Unlimited HQ slow motion video captures
         </p>
         <hr style={{ width: "100%", height: "0px", color: "#DADEE3" }} />
         <p
-          className=""
-          style={{
-            color: "#000",
-            fontSize: "24px",
-            fontStyle: "normal",
-            fontWeight: "400",
-            lineHeight: "normal",
-          }}
+          className="text-lg tablet:text-2xl"
         >
           4 RGB LED Lights
         </p>
         <hr style={{ width: "100%", height: "0px", color: "#DADEE3" }} />
         <p
-          className=""
-          style={{
-            color: "#000",
-            fontSize: "24px",
-            fontStyle: "normal",
-            fontWeight: "400",
-            lineHeight: "normal",
-          }}
+          className="text-lg tablet:text-2xl"
         >
           2 on-site attendants
         </p>
         <hr style={{ width: "100%", height: "0px", color: "#DADEE3" }} />
         <p
-          className=""
-          style={{
-            color: "#000",
-            fontSize: "24px",
-            fontStyle: "normal",
-            fontWeight: "400",
-            lineHeight: "normal",
-          }}
+          className="text-lg tablet:text-2xl"
         >
           1 Customized Overlay with 3 Revisions
         </p>
         <hr style={{ width: "100%", height: "0px", color: "#DADEE3" }} />
         <p
-          className=""
-          style={{
-            color: "#000",
-            fontSize: "24px",
-            fontStyle: "normal",
-            fontWeight: "400",
-            lineHeight: "normal",
-          }}
+          className="text-lg tablet:text-2xl"
         >
           Custom Logo/Branding On Video
         </p>
         <hr style={{ width: "100%", height: "0px", color: "#DADEE3" }} />
         <p
-          className=""
-          style={{
-            color: "#000",
-            fontSize: "24px",
-            fontStyle: "normal",
-            fontWeight: "400",
-            lineHeight: "normal",
-          }}
+          className="text-lg tablet:text-2xl"
         >
           Laser & Disco Light Machine
         </p>
         <hr style={{ width: "100%", height: "0px", color: "#DADEE3" }} />
         <p
-          className=""
-          style={{
-            color: "#000",
-            fontSize: "24px",
-            fontStyle: "normal",
-            fontWeight: "400",
-            lineHeight: "normal",
-          }}
+          className="text-lg tablet:text-2xl"
         >
           Fog Machine
         </p>
         <hr style={{ width: "100%", height: "0px", color: "#DADEE3" }} />
         <p
-          className=""
-          style={{
-            color: "#000",
-            fontSize: "24px",
-            fontStyle: "normal",
-            fontWeight: "400",
-            lineHeight: "normal",
-          }}
+          className="text-lg tablet:text-2xl"
         >
           Over 50 different props, including themed ones
         </p>
         <hr style={{ width: "100%", height: "0px", color: "#DADEE3" }} />
         <p
-          className=""
-          style={{
-            color: "#000",
-            fontSize: "24px",
-            fontStyle: "normal",
-            fontWeight: "400",
-            lineHeight: "normal",
-          }}
+          className="text-lg tablet:text-2xl"
         >
           Online gallery for download
         </p>
         <hr style={{ width: "100%", height: "0px", color: "#DADEE3" }} />
         <p
-          className=""
-          style={{
-            color: "#000",
-            fontSize: "24px",
-            fontStyle: "normal",
-            fontWeight: "400",
-            lineHeight: "normal",
-          }}
+          className="text-lg tablet:text-2xl"
         >
           Free local travel (within 30 miles of Pasadena)
         </p>

@@ -14,8 +14,8 @@ export default function ClientsReviewsTests() {
         }}
       >
         <div className="grid grid-cols-1 tablet:grid-cols-2 gap-4">
-          <div>
-            <p
+          <div className="m-auto">
+            <h2
               style={{
                 color: "#000",
                 fontFamily: `${playfairDisplay.style.fontFamily}`,
@@ -26,7 +26,7 @@ export default function ClientsReviewsTests() {
               }}
             >
               Client Testimonials
-            </p>
+            </h2>
             <p
               className="mt-4"
               style={{
@@ -37,12 +37,7 @@ export default function ClientsReviewsTests() {
                 lineHeight: "150%",
               }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur.
+              We had the pleasure of working with Awwficial Rentals for two of our public events in Downtown Culver City. They worked on our Third Wednesday Tropical Staycation and 2023 Hip &amp; Historic Halloween. The 360 photo booth added an incredible level of fun and engagement to both occasions. It is user friendly to all ages and captures memories for people to keep for a lifetime. The team was professional, friendly, and the quality of service exceeded our expectations. Our community loved it!
             </p>
             <div
               className="mt-4"

@@ -4,7 +4,7 @@ import { playfairDisplay } from "../ui/fonts";
 export default function GalleryPage() {
   return (
     <div className="flex flex-col justify-center items-center pb-52 desklg:pb-96 pl-4 pr-4">
-      <p
+      <h1
         className="pt-8 pb-8"
         style={{
           color: "#000",
@@ -16,7 +16,7 @@ export default function GalleryPage() {
         }}
       >
         Browse Photos by Events
-      </p>
+      </h1>
       <div
         className="grid grid-cols-1 md:grid-cols-2 gap-y-9 gap-x-5 p-4"
         style={{
