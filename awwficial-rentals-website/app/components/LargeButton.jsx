@@ -9,7 +9,7 @@ import {lato} from '../ui/fonts.jsx';
 //     </div>
 export default function LargeButton ({className, name, href}) {
   return (
-    <Link href={href}>
+    <Link href={href} className="z-[2]">
       <button  className={`${className} flex flex-col items-center px-[18px] py-3.5 rounded-lg hover:bg-[#541D59]	bg-primary text-white text-xl leading-7 not-italic active:bg-[#39033D] disabled:bg-[#7E1F8680]`} style={{ fontFamily: lato.style.fontFamily }}>
         {name}
       </button>
