@@ -15,11 +15,10 @@ export default function ClientsReviewsTests() {
       >
         <div className="grid grid-cols-1 tablet:grid-cols-2 gap-4">
           <div className="m-auto">
-            <h2
+            <h2 className="text-[32px] tablet:text-[36px]"
               style={{
                 color: "#000",
                 fontFamily: `${playfairDisplay.style.fontFamily}`,
-                fontSize: "32px",
                 fontStyle: "normal",
                 fontWeight: "500",
                 lineHeight: "150%",
