@@ -19,7 +19,7 @@ import { format } from 'date-fns'
     SENDGRID_API_KEY, OWNER_EMAIL, SENDGRID_VERIFIED_EMAIL
 */
 export async function sendEmail(data, component) {
-  console.debug(`sendEmail ran`)
+  // console.debug(`sendEmail ran`)
   const apiKey = process.env.SENDGRID_API_KEY;
   sgMail.setApiKey(apiKey);
   let htmlText = "";
@@ -30,6 +30,7 @@ export async function sendEmail(data, component) {
               <li>Sender Name: ${data.name}</li>
               <li>Sender Email: ${data.email}</li>
               <li>Sender Message: ${data.message}</li>
+              <li>Date of Input: ${format(data.created_at,'MM/dd/yyyy')}</li>
             </ul>
             </div>`
   } else if(component === "quote"){
@@ -53,11 +54,11 @@ export async function sendEmail(data, component) {
       subject: `Awwficial: ${component} form submission`,
       html: `${htmlText}`,
   };
-  console.log(msg);
+  // console.log(msg);
   try{
-    console.log('sgMail started sending email')
+    // console.log('sgMail started sending email')
     const res = await sgMail.send(msg);
-    console.log('sgMail finished', res);
+    // console.log('sgMail finished', res);
   } catch (error) {
     console.error(error);
     throw new Error("Email was not sent");

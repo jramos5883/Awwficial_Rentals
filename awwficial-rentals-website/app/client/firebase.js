@@ -42,8 +42,8 @@ const db = getFirestore(app);
     returns {success:data[0].id}
 */
 export async function addData(userData, component){
-  console.debug(`addData started`);
-  console.debug(component)    
+  // console.debug(`addData started`);
+  // console.debug(component)    
   const currentDate = new Date();
   let formattedData;
   if(component ==="quote"){
@@ -65,11 +65,11 @@ export async function addData(userData, component){
       created_at: currentDate
     }
   }
-  console.log(`formattedData:${JSON.stringify(formattedData)}`)
+  // console.log(`formattedData:${JSON.stringify(formattedData)}`)
   
   try{
     const docRef = await addDoc(collection(db, component), formattedData); 
-    console.log("Document written with ID: ", docRef.id);
+    // console.log("Document written with ID: ", docRef.id);
     await sendEmail(formattedData, component);
     return {success:docRef.id}
   } catch ({name, message}){

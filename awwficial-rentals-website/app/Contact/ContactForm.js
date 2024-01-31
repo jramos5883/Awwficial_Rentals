@@ -20,11 +20,11 @@ function ContactForm() {
         let errors = 0;
         // Test if the input matches the pattern
         if (!NamesRegex.test(name)) {
-            console.log("name is NOT valid")
+            // console.log("name is NOT valid")
             errors += 1;
         } 
         if (!messageRegex.test(message)) {
-            console.log("message is NOT valid")
+            // console.log("message is NOT valid")
             errors += 1;
         } 
         
@@ -90,20 +90,20 @@ function ContactForm() {
     const useEffectSubmit = async (data) => {
         try {
             const response = await addData(data, "contact");
-            console.log("response from await addToDB ", response);
+            // console.log("response from await addToDB ", response);
             if (response?.success) {
-                console.log(`Data added. db id#: ${response.success}`);
+                // console.log(`Data added. db id#: ${response.success}`);
                 setResNoError(true);
             } else {
-                console.log(`Error: ${response.failed}`);
+                console.error(`Error: ${response.failed}`);
                 setResError(true);
             }
         } catch (err) {
-            console.log(err);
+            console.error(err);
         }
     }
     if (isFormChecked && isFormValid) { 
-        console.log("both check & validation are true");
+        // console.log("both check & validation are true");
         useEffectSubmit(submitForm);
         // Rest of your code, e.g., submit the form
     } 
