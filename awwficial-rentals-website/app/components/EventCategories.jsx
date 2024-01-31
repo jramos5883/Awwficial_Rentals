@@ -39,11 +39,10 @@ export default function () {
               boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
             }}
           >
-            <p
+            <p className="text-[28px] tablet:text-[33px]"
               style={{
                 color: "#FFFEF8",
                 fontFamily: `${playfairDisplay.style.fontFamily}`,
-                fontSize: "33px",
                 fontStyle: "normal",
                 fontWeight: "500",
                 lineHeight: "150%",
@@ -76,11 +75,11 @@ export default function () {
               boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
             }}
           >
-            <p
+            <p className="text-[28px] tablet:text-[33px]"
               style={{
                 color: "#FFFEF8",
                 fontFamily: `${playfairDisplay.style.fontFamily}`,
-                fontSize: "33px",
+
                 fontStyle: "normal",
                 fontWeight: "500",
                 lineHeight: "150%",
@@ -113,11 +112,10 @@ export default function () {
               boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
             }}
           >
-            <p
+            <p className="text-[28px] tablet:text-[33px]"
               style={{
                 color: "#FFFEF8",
                 fontFamily: `${playfairDisplay.style.fontFamily}`,
-                fontSize: "33px",
                 fontStyle: "normal",
                 fontWeight: "500",
                 lineHeight: "150%",

@@ -12,7 +12,7 @@ export default function OpeningFrame() {
         <p className={`text-white text-center font-extrabold text-2xl tablet:text-4xl mb-3 ${playfairDisplay.className}`}>
         Ready to make your event <span className="block tablet:inline text-center">Awwficial?</span>
         </p>
-        <LargeButton className={'mt-3 tablet:mt-8  tablet:text-2xl text-xl'} name={"View Pricing"} href={"/Services"} />
+        <LargeButton className={'mt-3 tablet:mt-8  tablet:text-[24px] text-[20px]'} name={"View Pricing"} href={"/Services"} />
       </div>
     </div>
   );
