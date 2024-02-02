@@ -68,7 +68,7 @@ export default function ProductDescription() {
           </div>
           <div className="tablet:order-1">
             <Image
-              src="https://s3-alpha-sig.figma.com/img/8128/af1c/60b89ba485a0de238fd5038c0e10560f?Expires=1702857600&Signature=I5Eyw3hFhIcOB5SlM6l4JlEXl0~F5Ndfz8076nwhL1BdjAnt75AYsYdqibLIfOn7a3IfFyX0e0ydMuQ6YtsLTGlzw52QLc~ahhl-mFJPNJpKK6KrRock28RPQex2MqURxzRNLNq-6lLg6ycIGeGSp4ubnU6xW4BlEuXkTRrL4M3KIxlIfhf2gbQ2hRW7WGYaLT09~yXgj0UOhUH-7N1QY4gHlnbKx-hodtuo0MFfHKEidAYItDjsapBUZ-vvRmKiMekExGW1amqNf4rQS3XCDoqCaPJ5RGXiR4Du0NmE0jR6cn1Rk8IrStMqTFQXKX5tFO2~X66Rg4CEZOMHptQidg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+              src="/images/home-turndownforwhat.png"
               width={640} // Set the width of the image
               height={440} // Set the height of the image
               layout="responsive"

@@ -52,13 +52,13 @@ export default function GetAQuote() {
     setErrorStatus(false);
     try {
       const response = await addData(data, "quote");
-      console.log(response)
+      // console.log(response)
       if (response?.success) {
-        console.log(`Data added. db id#: ${response.success}`);
+        // console.log(`Data added. db id#: ${response.success}`);
         setErrorStatus(false);
         setModalOpen(true);
       } else {
-        console.log(`Error: ${response.failed.message}`);
+        console.error(`Error: ${response.failed.message}`);
         setErrorStatus(true);
         setModalOpen(false);
       }
