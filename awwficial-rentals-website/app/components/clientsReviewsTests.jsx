@@ -51,10 +51,10 @@ export default function ClientsReviewsTests() {
             >
               Client Testimonials
             </h2>
-            <div className="flex flex-nowrap overflow-scroll max-h-[340px]">
+            <div className="flex flex-nowrap overflow-hidden max-h-[340px]">
 
-              <p
-                className="flex justify center min-w-full w-full h-full ease-[cubic-bezier(0.39, 0.575, 0.565, 1)] duration-1000 mt-4"
+              <div
+                className="flex justify-center overflow-scroll min-w-full w-full max-h-[440px] ease-[cubic-bezier(0.39, 0.575, 0.565, 1)] duration-1000 mt-4"
                 style={{
                   color: "#000",
                   fontSize: "24px",
@@ -64,9 +64,11 @@ export default function ClientsReviewsTests() {
                   transform: `translate(${100*index*click}%)`
                 }}
               >
+                <p>
                 We had the pleasure of working with Awwficial Rentals for two of our public events in Downtown Culver City. They worked on our Third Wednesday Tropical Staycation and 2023 Hip &amp; Historic Halloween. The 360 photo booth added an incredible level of fun and engagement to both occasions. It is user friendly to all ages and captures memories for people to keep for a lifetime. The team was professional, friendly, and the quality of service exceeded our expectations. Our community loved it!
+                </p>
 
-              </p>
+              </div>
 
               <div
                 className="flex-row justify-center  content-between overflow-scroll min-w-full w-full max-h-[440px] ease-[cubic-bezier(0.39, 0.575, 0.565, 1)] duration-1000 mt-3 "
