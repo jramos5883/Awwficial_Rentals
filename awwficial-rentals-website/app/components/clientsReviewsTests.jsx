@@ -51,10 +51,10 @@ export default function ClientsReviewsTests() {
             >
               Client Testimonials
             </h2>
-            <div className="flex flex-nowrap overflow-hidden max-h-[340px]">
+            <div className="flex flex-nowrap overflow-scroll max-h-[340px]">
 
               <p
-                className="flex justify center  min-w-full w-full h-full ease-[cubic-bezier(0.39, 0.575, 0.565, 1)] duration-1000 mt-4"
+                className="flex justify center min-w-full w-full h-full ease-[cubic-bezier(0.39, 0.575, 0.565, 1)] duration-1000 mt-4"
                 style={{
                   color: "#000",
                   fontSize: "24px",
