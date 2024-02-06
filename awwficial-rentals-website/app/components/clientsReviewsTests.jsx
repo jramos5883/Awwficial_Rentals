@@ -145,7 +145,7 @@ export default function ClientsReviewsTests() {
           </div>
           <div>
             <Image
-              src="https://s3-alpha-sig.figma.com/img/cf53/2051/0b97748d6b451f18bd25fc00152b9154?Expires=1702857600&Signature=ljTg2ijXFE54pta050Mtx~ZUJ2unOjoNAcqWe9znif3hwosYzS2gKkGOyGfzLFJMrqAyOmps9m7oAnC9yg1jNgeSxgu0-LlltDPHW-0PBKMVslNT0wN-vTgv3slEolMgn9SCVyclnQaPa2vprsgMaAkEcmtWUHPQtu0tg4a~unt8sEO8g3d4yqHyhYYjJkfOZv6aYG5yJMCVmFLS~bXiaPloMZq782wn8yg9OnuUa3BnfYupndjwOPv0zOeSlPwPoPwLRdP8Uy1njMh1Rx7robkYasoGoo4XVdDhlmvAegIimdIG~A4h8YD1PZtL2IdXwKI6oLAnoGKTKA8gWAx8GA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+              src="/images/home-client-testimonials.png"
               width={640} // Set the width of the image
               height={440} // Set the height of the image
               layout="responsive"
