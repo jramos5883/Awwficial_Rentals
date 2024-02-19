@@ -8,6 +8,7 @@ export default function ClientsReviewsTests() {
   const data = [1, 2];
 
   const manageLeftClick = () => {
+    console.log('left clicked');
     const newIndex = index - 1;
     if(newIndex < 1) {
       setIndex(data.length - 1);
@@ -17,6 +18,7 @@ export default function ClientsReviewsTests() {
     setClick(0);
   }
   const manageRightClick = () => {
+    console.log('right clicked');
     const newIndex = index + 1;
     if(newIndex >= data.length) {
       setIndex(1);
@@ -103,26 +105,29 @@ export default function ClientsReviewsTests() {
                 alignSelf: "stretch",
               }}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="40"
-                height="40"
-                viewBox="0 0 40 40"
-                fill="none"
-                onClick={manageLeftClick}
-              >
-                <path
-                  d="M20 5C28.2843 5 35 11.7157 35 20C35 28.2843 28.2843 35 20 35C11.7157 35 5 28.2843 5 20C5 11.7157 11.7157 5 20 5Z"
-                  fill="white"
-                />
-                <path
-                  d="M21.6667 25L16.6667 20L21.6667 15M35 20C35 11.7157 28.2843 5 20 5C11.7157 5 5 11.7157 5 20C5 28.2843 11.7157 35 20 35C28.2843 35 35 28.2843 35 20Z"
-                  stroke="#120155"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <div onClick={manageLeftClick}>
+
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="40"
+                  height="40"
+                  viewBox="0 0 40 40"
+                  fill="none"
+
+                >
+                  <path
+                    d="M20 5C28.2843 5 35 11.7157 35 20C35 28.2843 28.2843 35 20 35C11.7157 35 5 28.2843 5 20C5 11.7157 11.7157 5 20 5Z"
+                    fill="white"
+                  />
+                  <path
+                    d="M21.6667 25L16.6667 20L21.6667 15M35 20C35 11.7157 28.2843 5 20 5C11.7157 5 5 11.7157 5 20C5 28.2843 11.7157 35 20 35C28.2843 35 35 28.2843 35 20Z"
+                    stroke="#120155"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="40"
