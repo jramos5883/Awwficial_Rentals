@@ -8,7 +8,7 @@ export default function ClientsReviewsTests() {
   const data = [1, 2];
 
   const manageLeftClick = () => {
-    console.log('left clicked');
+
     const newIndex = index - 1;
     if(newIndex < 1) {
       setIndex(data.length - 1);
@@ -18,7 +18,7 @@ export default function ClientsReviewsTests() {
     setClick(0);
   }
   const manageRightClick = () => {
-    console.log('right clicked');
+
     const newIndex = index + 1;
     if(newIndex >= data.length) {
       setIndex(1);
